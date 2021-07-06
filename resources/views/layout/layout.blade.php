@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>{{env('APP_NAME')}}</title>
     <link rel="stylesheet" href="{{asset('public/assets/css/bootstrap.css')}}">
-    <link rel="shortcut icon" href="{{asset('public/assets/images/favicon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('public/assets/images/logo.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('public/assets/css/app.css')}}">
     <link rel="stylesheet" href="{{asset('public/assets/vendors/perfect-scrollbar/perfect-scrollbar.css')}}">
     @include('assets')

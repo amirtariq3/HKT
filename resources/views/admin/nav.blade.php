@@ -3,7 +3,7 @@
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">
     <div class="sidebar-header">
-        <img src="{{URL::to('')}}/public/admin/assets/images/logo.svg" alt="" srcset="">
+        <img src="{{asset('public/assets/images/logo.png')}}" alt="" srcset="">
     </div>
     <div class="sidebar-menu">
         <ul class="menu">

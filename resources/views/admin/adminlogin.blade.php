@@ -43,7 +43,7 @@
                                 </a>
                             </div>
                             <div class="position-relative">
-                                <input type="text" class="form-control" name="password" id="password" required>
+                                <input type="password" class="form-control" name="password" id="password" required>
                                 <div class="form-control-icon">
                                     <i data-feather="lock"></i>
                                 </div>

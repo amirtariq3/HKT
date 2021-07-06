@@ -57,9 +57,9 @@ class CompanyCertificateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('admin.company.certificate.list');
     }
 
     /**
@@ -108,9 +108,12 @@ class CompanyCertificateController extends Controller
     public function add($id)
     {
         $c = Company::where('id', $id)->with('certificate')->first();
-        dd($c);
-
-        return view('admin.company.certificate.add2', ['certificate' => Certificate::all()]);
+        //dd($c);
+        $s = [];
+        foreach($c->certificate as $a){
+            array_push($s, $a->id);
+        }
+        return view('admin.company.certificate.add2', ['certificate' => Certificate::all(), 'c->certificate' => $s]);
     }
 
     public function certificateSync(Request $r, $id)
@@ -121,9 +124,20 @@ class CompanyCertificateController extends Controller
         
     }
 
+    public function serviceSyncView(Request $r, $id)
+    {
+        $c = Company::where('id', $id)->with('certificate')->first();
+        $s = [];
+        foreach($c->certificate as $a){
+            array_push($s, $a->id);
+        }
+        return view('admin.company.certificate.list2', ['certificate' => Certificate::all(), 'c_certificate' => $s, 'c'=>$c]);
+    }
+
     public function datatable($id)
       {
         $data =CompanyCertificates::where('company_id', $id)->with('company', 'certificate')->get();
         return Datatables::of($data)->make(true);
     }
+
 }

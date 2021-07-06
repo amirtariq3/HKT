@@ -35,7 +35,7 @@ class Company extends Model
 
     public function certificate()
     {
-        return $this->belongsToMany('App\Models\Certificate');
+        return $this->belongsToMany('App\Models\Certificate', 'certificate-company');
     }
 
     public function companyservice()

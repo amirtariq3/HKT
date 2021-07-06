@@ -100,13 +100,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/company_trade_refrence/list/', ['as' =>'company_trade_refrences.list', 'uses'=>'admin\TradeReferencesController@list']);
 
     //Route::resource('company_certificate', 'admin\CompanyCertificateController');
-    Route::get('/company/certificate/{id}', ['as' => 'company_certificate.certificates', 'uses' => 'admin\CompanyCertificateController@index']);
+    Route::get('/company/certificate/{id}', ['as' => 'company_certificate.certificates', 'uses' => 'admin\CompanyCertificateController@serviceSyncView']);
     Route::get('/company/certificate/create/{id}', ['as' => 'company.create.certificate', 'uses' => 'admin\CompanyCertificateController@add']);
-    Route::get('/company_certificate/list', ['as' =>'company_certificate.list', 'uses'=>'admin\CompanyCertificateController@datatable']);
     Route::post('/company/certificate/create/{id}', ['as' => 'company_certificate.add', 'uses' => 'admin\CompanyCertificateController@certificateSync']);
     Route::get('/company/certificate/edit/{id}', ['as' => 'company_certificate.edit', 'uses' => 'admin\CompanyCertificateController@edit']);
     Route::post('/company/certificate/edit/{id}', ['uses' => 'admin\CompanyCertificateController@add']);
     Route::get('/company_certificate/list/{id}', ['as' =>'company_certificate.list', 'uses'=>'admin\CompanyCertificateController@datatable']);
+    
 
     //Route::resource('company_reviews', 'admin\ReviewController');
     Route::get('/company/reviews/{id}', ['as'=>'company.reviews', 'uses' =>'admin\ReviewController@index']);

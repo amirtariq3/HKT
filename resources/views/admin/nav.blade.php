@@ -180,9 +180,7 @@
                             <a href="{{route('admin.company.trade-refrence.list')}}">Trade references</a>
                         </li>
 
-                        <li>
-                            <a href="">Company certificates</a>
-                        </li>
+                        
 
                         <li>
                             <a href="{{route('admin.company.review.list')}}">Reviews</a>

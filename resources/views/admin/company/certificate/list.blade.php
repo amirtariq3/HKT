@@ -17,16 +17,13 @@
                     <div class="card-body">
                         <div class="row">
                             <h3>Company Certificate List</h3>
-                            <div class="btn">
-                                <a class="btn btn-primary pull-right" href="" style="margin-left: 780px; margin-bottom:18px;">Add New</a>
-                                </div>
+                            
                             <table class="table table-striped data-table">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Company Name</th>
                                         <th>Service</th>
-                                        <th width="100px">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,7 +40,7 @@
                             var table = $('.data-table').DataTable({
                                 processing: true,
                                 serverSide: true,
-                                ajax: "{{route('admin.company_certificate.list')}}",
+                                ajax: "{{route('admin.company-certificate-list')}}",
                                 columns: [
                                     {data: 'id', name: 'id'},
                                     {
@@ -57,11 +54,7 @@
                                         }
                                     },
                                     
-                                    {
-                                        'data' : function(row){
-                                            return  '<a href="{{$url}}/'+ row.id +'/edit" class="button px-2 mr-1 mb-2 bg-theme-1 text-black"><i class="fa fa-edit"></i></a>'
-                                        }
-                                     }
+                                    
                     
                                 ]
                             });

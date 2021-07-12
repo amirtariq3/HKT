@@ -18,12 +18,17 @@
                 <div class="row">
                     <div class="card-body">
                         <div class="row">
-                        <form method="post" action="{{route('admin.services.store')}}">
+                        <form method="post" action="{{route('admin.services.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="col-md-10">
                                 <div class="form-group">
                                     <label>Name</label>
                                     <input type="text" class="form-control" id="basicInput" placeholder="Enter name" name="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Icon</label><br>
+                                    <input type="file" name="image" id="customFile">
                                 </div>
         
                                 <div class="form-group">

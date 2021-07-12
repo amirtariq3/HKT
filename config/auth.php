@@ -47,6 +47,12 @@ return [
             'hash' => false,
         ],
 
+        'member' => [
+            'driver' => 'session',
+            'provider' => 'members',
+            'hash' => false,
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -80,6 +86,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+
+        'members' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Member::class,
         ],
 
 

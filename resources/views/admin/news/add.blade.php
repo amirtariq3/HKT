@@ -57,7 +57,7 @@
 
                             <div class="form-group">
                                 <label>Author</label>
-                                <select class="form-select" id="basicSelect" name="author_id" required>
+                                <select class="form-select" id="basicSelect" name="member_id" required>
                                     @foreach ($member as $m)
                                     <option value="{{$m->id}}">{{$m->name}}</option>
                                     @endforeach

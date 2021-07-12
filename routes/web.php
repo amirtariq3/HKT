@@ -14,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout.layout');
-});
+    return view('frontend.index');
+})->name('frontend.index');
+
+
+
+
+
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     
@@ -103,8 +108,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/company/certificate/{id}', ['as' => 'company_certificate.certificates', 'uses' => 'admin\CompanyCertificateController@serviceSyncView']);
     Route::get('/company/certificate/create/{id}', ['as' => 'company.create.certificate', 'uses' => 'admin\CompanyCertificateController@add']);
     Route::post('/company/certificate/create/{id}', ['as' => 'company_certificate.add', 'uses' => 'admin\CompanyCertificateController@certificateSync']);
-    Route::get('/company/certificate/edit/{id}', ['as' => 'company_certificate.edit', 'uses' => 'admin\CompanyCertificateController@edit']);
-    Route::post('/company/certificate/edit/{id}', ['uses' => 'admin\CompanyCertificateController@add']);
+    Route::get('/company/certificate/edit/{id}', ['as' => 'company_certificate.edit', 'uses' => 'admin\CompanyCertificateController@add']);
+    Route::post('/company/certificate/edit/{id}', ['uses' => 'admin\CompanyCertificateController@certificateSync']);
     Route::get('/company_certificate/list/{id}', ['as' =>'company_certificate.list', 'uses'=>'admin\CompanyCertificateController@datatable']);
     
 
@@ -142,6 +147,57 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
 });
 });
 
+Route::group(['prefix'=>'/', 'as'=> 'frontend.'], function(){
+
+    Route::get('signup', ['as'=> 'signup', 'uses'=>'frontend\MemberController@index']);
+    Route::post('signup', [ 'uses'=>'frontend\MemberController@store']);
+    Route::get('login', ['as'=> 'login', 'uses'=>'frontend\MemberController@create']);
+    Route::post('login', ['uses'=>'frontend\MemberController@login']);
+    Route::get('logout', ['as'=> 'logout', 'uses'=>'frontend\MemberController@logout']);
+
+    Route::get('news', ['as'=>'news', 'uses'=>'frontend\NewsController@index']);
+    Route::get('news/{id}', ['as'=>'news.category', 'uses'=>'frontend\NewsController@create']);
+    Route::get('news/detail/{id}', ['as'=>'news.detail', 'uses'=>'frontend\NewsController@show']);
+    Route::get('trackandtrace', ['as'=>'trackandtrace', 'uses'=>'frontend\TracknTraceController@index']);
+    Route::get('airports', ['as'=>'airports', 'uses'=>'frontend\TracknTraceController@create']);
+    Route::get('airline', ['as'=>'airline', 'uses'=>'frontend\TracknTraceController@show']);
+    Route::get('widgets', ['as'=>'widgets', 'uses'=>'frontend\TracknTraceController@tool']);
+Route::middleware('login:member')->group(function(){
+    Route::get('dashboard',['as'=>'dashboard', 'uses'=>'frontend\DashboardController@index']);
+    Route::get('dashboard/memer_profile',['as'=>'dashboard.prfile', 'uses'=>'frontend\DashboardController@create']);
+    Route::post('dashboard/memer_profile',['as'=>'dashboard.prfile', 'uses'=>'frontend\DashboardController@update']);
+    Route::get('dashboard/basic_info',['as'=>'dashboard.info', 'uses'=>'frontend\DashboardController@show']);
+    Route::post('dashboard/basic_info',['as'=>'dashboard.info', 'uses'=>'frontend\DashboardController@store']);
+
+    Route::get('dashboard/ceo',['as'=>'dashboard.ceo', 'uses'=>'frontend\DirectorController@index']);
+    Route::get('dashboard/ceo_add',['as'=>'dashboard.ceo_add', 'uses'=>'frontend\DirectorController@create']);
+    Route::post('dashboard/ceo_add',['as'=>'dashboard.ceo_add', 'uses'=>'frontend\DirectorController@store']);
+    Route::get('dashboard/ceo_add/{id}',['as'=>'dashboard.ceo.delete', 'uses'=>'frontend\DirectorController@destroy']);
+
+    Route::get('dashboard/service',['as'=>'dashboard.service', 'uses'=>'frontend\ServiceController@index']);
+    Route::post('dashboard/service',['as'=>'dashboard.service', 'uses'=>'frontend\ServiceController@store']);
+
+    Route::get('dashboard/certificate',['as'=>'dashboard.certificate', 'uses'=>'frontend\CertificateController@index']);
+    Route::post('dashboard/certificate',['as'=>'dashboard.certificate', 'uses'=>'frontend\CertificateController@store']);
+
+    Route::get('dashboard/representative',['as'=>'dashboard.representative', 'uses'=>'frontend\RepresentativeController@index']);
+    Route::get('dashboard/representative_add',['as'=>'dashboard.representative_add', 'uses'=>'frontend\RepresentativeController@create']);
+    Route::post('dashboard/representative_add',['as'=>'dashboard.representative_add', 'uses'=>'frontend\RepresentativeController@store']);
+    Route::get('dashboard/representative/{id}',['as'=>'dashboard.representative.delete', 'uses'=>'frontend\RepresentativeController@destroy']);
+
+    Route::get('dashboard/refrence',['as'=>'dashboard.refrence', 'uses'=>'frontend\RefrenceController@index']);
+    Route::get('dashboard/refrence_add',['as'=>'dashboard.refrence_add', 'uses'=>'frontend\RefrenceController@create']);
+    Route::post('dashboard/refrence_add',['as'=>'dashboard.refrence_add', 'uses'=>'frontend\RefrenceController@store']);
+    Route::post('dashboard/refrence/{id}',['as'=>'dashboard.refrence.delete', 'uses'=>'frontend\RefrenceController@destroy']);
+
+    Route::get('dashboard/branch',['as'=>'dashboard.branch', 'uses'=>'frontend\BranchController@index']);
+    Route::get('dashboard/branch_add',['as'=>'dashboard.branch_add', 'uses'=>'frontend\BranchController@create']);
+    Route::post('dashboard/branch_add',['as'=>'dashboard.branch_add', 'uses'=>'frontend\BranchController@store']);
+    Route::get('dashboard/branch/{id}',['as'=>'dashboard.branch.delete', 'uses'=>'frontend\BranchController@destroy']);
+    Route::get('dashboard/news_add',['as'=>'dashboard.news_add', 'uses'=>'frontend\NewsController@add']);
+    Route::post('dashboard/news_add',['as'=>'dashboard.news_add', 'uses'=>'frontend\NewsController@store']);
+});
+});
 
 
 

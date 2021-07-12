@@ -1,0 +1,1039 @@
+@media only screen and (min-width:1080px) and (max-width:2000px) {
+
+    
+    .outer-banner.sticky{padding:200px 0 100px 0;}
+    
+}
+
+
+
+@media only screen and (min-width:991) and (max-width:1080px) {
+   
+}
+
+
+@media only screen and (min-width:1081px) and (max-width:1200px) {
+
+    
+   .section_health {
+       margin: -58px 0 60px 0;
+    }
+    .health_header{min-height: 58px;}
+    
+}
+
+
+@media(max-width: 1420px){
+
+
+
+}
+
+
+
+@media only screen and (min-width:768px) and (max-width:1080px) 
+{
+  
+    .health_head_col {
+     background: none !important; 
+    box-shadow: none !important;
+    }
+
+    .section_health {
+        float: left;
+        margin: -63px 0 60px 0 !important;
+    }
+   
+    .id_life_experi_col .layer_mask_inner.layer_mask_inner2 {
+        top: 34% !important;
+    }
+    .id_life_experi_col .layer_mask_inner {
+    position: absolute;
+    width: 100%;
+        top: 25% !important;
+    }
+    
+    .container {
+        padding: 0px 60px !important ;
+        width: 100%;
+    }
+    
+    .bner-view h2{text-align: left !important;}
+    .bner-view p{text-align: left !important;}
+    .bner-view a{float: left !important;}
+    .outer-banner{min-height: 370px;}
+    .health_header .health_head_col h6 {
+        margin: 4px 0 3px 0;
+    }
+    .health_header .health_head_col p {
+        margin: 17px 0 16px 0;
+        min-height: 29px;
+        max-height: 29px;
+    }
+    
+    .health_header_lower3 .health_content_col{border-bottom: none !important; border-right: solid 1px #959595;}
+    .health_header_lower3 .border_right_0{border-right: none;}
+    
+    .outer-banner.sticky {
+        padding: 200px 0 150px 0;
+    }
+    
+    
+     body .outer-banner.sticky {
+        padding: 200px 0 110px 0 !important;
+    }
+    
+    
+    .health_content_col.lower_section_price2 {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    border-right: solid 1px #959595;
+}
+
+    .health_content_col.lower_section_price2 .border_right_0{border-right: none;}
+  
+    
+    
+    .lower_section_price2 .col-sm-4 .health_content_col{ border-bottom: none !important; border-right: solid 1px #959595 !important;}
+    
+    
+    
+}
+
+
+
+@media(max-width: 1080px){
+    
+    
+    
+    .health_header_lower3 .border_right_0{border-right: none; border-bottom: none;}
+
+.bner-view img {
+        float: none;
+        margin: 0px;
+        padding: 0px;
+        max-width: 100%;
+    }
+    .layer_mask_inner2 {
+        top: 40% !important;
+    }
+    
+    .layer_mask_inner p {
+        float: left;
+        margin: 0px 0 24px 0;
+        padding: 0px;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .layer_mask_inner p br{display: none;}
+    
+    
+    
+    .layer_mask_inner h3 {
+    float: left;
+    margin: 0px 0 12px 0;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 700;
+}
+    .layer_mask_inner {
+        position: absolute;
+        width: 100%;
+        top: 33%;
+        z-index: 50;
+        text-align: center;
+        padding: 20px;
+        height: 100%;
+    }
+    
+    .class1{margin: 232px -25px 0 -25px;}
+    .id_life_experi_col{margin: 0 0 12px 0;}
+    
+    .navigation_main ul li {
+    width: 25%;
+    text-align: center;
+    margin: 0 0 18px 0;
+}
+    
+    .navigation_main{padding: 0px;}
+    .navigation_main ul li a{font-size: 14px;}
+    
+    .slidedown_body {
+    position: fixed;
+        top: 83px;}
+    
+    .cart_header{float: right;}
+    .header_main{padding: 15px 0px;}
+    .logo {
+    float: left;
+        margin: 2px 0 0 0;
+    }
+    
+    .bner-view h2 {
+    text-align: center;
+    float: left;
+    margin: 17px 0 20px 0;
+    padding: 0px;
+    width: 100%;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+    
+    
+    
+    .bner-view p{text-align: center; font-size: 14px;}
+    .bner-view p br{ display: none;}
+    .bner-view a{float: none;}
+    .bner-view { text-align: center;}
+    
+    
+    
+    .health_header{ background: none;}
+    .health_head_col {
+    background: url(../images/health_order_mobi.png) 0px 0px no-repeat;
+    background-size: 100% 100%;
+    box-shadow: none;
+    border-bottom: solid 1px #0c7fc2;
+}
+    
+    .section_health {
+        float: left;
+        margin: -227px 0 60px 0;
+        padding: 0px;
+        width: 100%;
+    }
+    .health_head_col p{margin:  19px 0;}
+    .health_head_col h6{margin:  19px 0;}
+    .list_scnd {
+        float: right !important;
+        width: auto !important;
+    }
+    
+    .list_scnd li {
+        width: auto !important;
+        clear: left !important;
+    }
+    
+    .inner_about_right{margin:50px 0 0px 0px !important;}
+    
+    
+
+    
+     
+    .lower_section_price2 .health_content_col{ border-bottom: solid 1px #959595 !important; border-right: none !important;}
+    .lower_section_price2 .health_content_col.border_right_0{ border-bottom: none !important; border-right: none !important;}
+    
+    
+    .morning_pck_yellow {
+    float: left;
+    margin: 0 0 0 -3%;
+    padding: 13px;
+    width: 103%;
+    background-color: #f7be07;
+    position: relative;
+    z-index: 30;
+}
+    
+   .morning_pck_yellow h6 {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 35px;
+} 
+   .morning_pck_yellow span img {
+    float: left;
+    width: auto;
+    max-width: 17%;
+    margin: 0 11px 0 0px;
+} 
+    
+    
+    .morning_pck_yellow p {
+    float: right;
+    margin: 7px 0 0 0;
+    padding: 0px;
+    width: auto;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+    
+    
+    
+    .pack_quan_col .input-group{width: 100%;}
+    .qty_order {
+    float: left;
+    margin: 43px 0 38px 0;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+    
+    .rotate_text_left {
+    position: absolute;
+    left: -20px;
+    background-color: #3eb978;
+    height: 100%;
+}
+    
+    
+   .lower_section_price {
+    float: left;
+    margin: 122px 0 0 0px;
+    padding: 0px;
+    width: 100%;
+} 
+    
+    
+    .lower_section_price2 {margin: 32px 0 100px 0;}
+    .lower_section_price2 .section_health {margin-top: 0px;}
+    
+    .lower_section_price2 .border_right_0{ border-bottom: none;}
+    
+ .inner-bndl h1 {
+    float: left;
+    font-weight: bold;
+    color: white;
+    margin: 30px 0 10px 0;
+    padding: 09px;
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+}
+    
+    .inner-bndl {
+    float: left;
+    margin: 0px 0 0 0;
+    padding: 0;
+    width: 100%;
+        text-align: center;
+}
+    
+    .inner-bndl a {
+    float: none;
+    margin: 0 0 22px 0;
+    display: inline-block;
+}
+    
+    .inner-bndl p{text-align: center;}
+    
+    .layer_mask {
+    position: absolute;
+    text-align: center;
+    top: 0%;
+    left: 0;
+    color: white;
+    right: 0;
+    padding: 10px;
+}
+    
+    
+    .inner-service h3 {
+    float: left;
+    margin: 12px 0 12px 0;
+    padding: 0px;
+    width: 100%;
+    font-size: 16px;
+}
+    
+    .inner-service {
+    position: relative;
+    margin: 0 0 10px 0;
+}
+    
+    .some_padd {
+    padding: 10px;
+}
+    
+    .some_padd2 {
+    padding: 10px;
+}
+    
+    .inner-service p {
+    float: left;
+    margin: 0px 0px 28px 0;
+    padding: 0px;
+    width: 100%;
+}
+    
+    .some_padd2 .inner-service h3 {
+    float: left;
+    margin: 0 0 32px 0;
+    }
+    
+    
+    .footr-logo {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+    .footr-logo{float: none;}
+    .footr-logo img{float: none;}
+    
+    .inner-about {
+    float: left;
+    margin: 22px 0 0 0;
+    padding: 0px;
+    width: 100%;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    .navbar-1 {
+    min-height: 1px;
+    margin-bottom: 0;
+    background-color: transparent;
+    border-radius: 0px;
+    width: 100%;
+    margin: 0px !important;
+    padding: 16px 0 20px 0;
+    border: none;
+    float: left;
+    border-bottom: 1px solid #8f58a8;
+    position: relative;
+    z-index: 100;
+}
+.inner-msge img {
+    float: right;
+    margin: 25px 0 -9px 0;
+    padding: 0px;
+    width: 5%;
+}
+    .store_border {
+        border-top: 1px solid #fff;
+        float: right;
+        margin: 20px 0 0;
+        padding: 15px 0 0;
+        width: 100%;
+        border-left: none;
+    }
+    
+    .heder_nav_main .navbar-default .navbar-nav > li > a {
+        font-size: 10px;
+        font-weight: 400;
+        padding: 15px 6px;
+    }
+     
+    
+
+
+
+.toggle_cart {
+    padding: 0px !important;
+    margin: 7px 0 0 0;
+}
+
+    
+    .inner-info{padding: 30px 10px;}
+    .inner-info ul li{text-align: center; padding: 0 0 0 0px;}
+    
+    .cip_total_count{float: left; width: 100%;}
+    
+    .health_content_col p span {
+        line-height: 31px;
+    }
+
+    .health_content_col p span.pro_bold {
+        font-size: 30px;
+        font-weight: 700;
+        margin: 5px 5px 0 0;
+        float: left;
+        width: 100%;
+        }
+    
+    .container{ padding: 0 50px;}
+    
+    .lower_section_price .health_header_lower .health_content_col p span{float: left; width: 100%;}
+    .pack_quan_col {
+        margin: 0 auto;
+        width: 173px;
+        text-align: center;
+        margin-top: 40px;
+    }
+    
+    
+    .btn-number {
+        width: 36px;
+        height: 36px;
+        border: solid 2px;
+        opacity: unset !important;
+    }
+    
+    .btn_left {
+        float: left;
+        width: auto !important;
+        margin: 3px 0 0 0;
+    }
+    
+    .btn_right {
+        float: right;
+        width: auto !important;
+        margin: 3px 0 0 0;
+    }
+    
+    .inner-bndl img{float: none;}
+    
+    
+    
+    
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 768px)
+{
+     
+    body .outer-banner.sticky {
+        padding: 200px 0 300px 0 !important;
+    }
+}
+
+@media(max-width: 767px)
+{
+    
+    
+    
+    
+    
+    
+    .tb_wdth_1{ width: 30%;}
+    .tb_wdth_2{ width: 17%;}
+    
+    
+    
+    .table-responsive{height: 490px; overflow-x: unset !important;}
+    .modal-body .container{padding: 0 6px;}
+    
+    body .outer-banner.sticky {
+        padding: 200px 0 245px 0 !important;
+    }
+    
+    .lower_section_price .health_header_lower .health_content_col p span{float: left; width: 100%;}
+    .container{padding: 0 50px 0 50px;}
+    
+    .bner-view img {
+        float: none;
+        margin: 0px;
+        padding: 0px;
+        max-width: 100%;
+    }
+    .layer_mask_inner2 {
+        top: 27% !important;
+    }
+    
+    .layer_mask_inner p {
+        float: left;
+        margin: 0px 0 24px 0;
+        padding: 0px;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .layer_mask_inner p br{display: none;}
+    
+    
+    
+    .layer_mask_inner h3 {
+    float: left;
+    margin: 0px 0 12px 0;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+    .layer_mask_inner {
+        position: absolute;
+        width: 100%;
+        top: 30%;
+        z-index: 50;
+        text-align: center;
+        padding: 7px;
+        height: 100%;
+    }
+    
+    
+    .inner-info ul li{text-align: center;}
+    
+    .class1 {
+        margin: 232px -25px 0 -25px;
+        font-size: 12px;
+    }
+    .id_life_experi_col{margin: 0 0 12px 0;}
+    
+    .navigation_main ul li {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+    .slidedown_body {
+    position: fixed;
+        top: 83px;}
+    
+    .cart_header{float: right;}
+    .header_main{padding: 15px 0px;}
+    .logo {
+    float: left;
+        margin: 5px 0 0 0;
+    }
+    
+    
+
+
+.inner-info {
+    float: left;
+    margin: 0 0 18px 0;
+}
+    
+    
+    .bner-view h2 {
+    text-align: center;
+    float: left;
+    margin: 17px 0 20px 0;
+    padding: 0px;
+    width: 100%;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+    .border_right_0{border-bottom: none !important;}
+    .detial-prodcts p br{display: none;}
+    .bner-view p{text-align: center; font-size: 14px;}
+    .bner-view p br{ display: none;}
+    .bner-view a{float: none;}
+    .bner-view { text-align: center;}
+    
+    .outer-banner{padding: 103px 0 250px 0;}
+    
+    
+    .health_header{ background: none;}
+    .health_head_col{ background: url(../images/health_order_mobi.png) 0px 0px no-repeat; background-size: 100% 100%; 
+    box-shadow: none;
+    border-bottom: solid 1px #0c7fc2;
+    }
+    .health_head_col p{font-size: 14px; margin: 17px 0px;}
+    
+    .health_head_col h6 {
+        float: left;
+        margin: 0px;
+        padding: 16px 0;
+    }
+    
+    .down_load_text{line-height: 17px;}
+    .arrow_dnld img {
+        float: left;
+        margin: 5.5px 0 0 0;
+    }
+    
+    .section_health {
+        float: left;
+        margin: -189px 0 60px 0;
+        padding: 0px;
+        width: 100%;
+    }
+.health_content_col {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    border-bottom: solid 1px #959595;
+    border-right: none;
+}
+    
+    .morning_pck_yellow {
+    float: left;
+    margin: 0 0 0 -3%;
+    padding: 13px;
+    width: 103%;
+    background-color: #f7be07;
+    position: relative;
+    z-index: 30;
+}
+    
+   .morning_pck_yellow h6 {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 35px;
+} 
+   .morning_pck_yellow span img {
+    float: left;
+    width: auto;
+    max-width: 17%;
+    margin: 0 11px 0 0px;
+} 
+    
+    
+    .morning_pck_yellow p {
+    float: right;
+    margin: 7px 0 0 0;
+    padding: 0px;
+    width: auto;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+    
+    
+    
+    .pack_quan_col .input-group{width: 100%;}
+    .qty_order {
+    float: left;
+    margin: 43px 0 38px 0;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+    
+    .rotate_text_left {
+    position: absolute;
+    left: -20px;
+    background-color: #3eb978;
+    height: 100%;
+}
+    
+    .lower_section_price2 {margin-top: 30px;}
+    .lower_section_price2 .section_health {margin-top: 0px;}
+    
+    
+   .lower_section_price {
+    float: left;
+    margin: 0px 0 0 0px;
+    padding: 0px;
+    width: 100%;
+} 
+    
+ .inner-bndl h1 {
+    float: left;
+    font-weight: bold;
+    color: white;
+    margin: 30px 0 10px 0;
+    padding: 09px;
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+}
+    
+    .inner-bndl {
+    float: left;
+    margin: 0px 0 0 0;
+    padding: 0;
+    width: 100%;
+        text-align: center;
+}
+    
+    .inner-bndl a {
+    float: none;
+    margin: 0 0 22px 0;
+    display: inline-block;
+}
+    
+    .inner-bndl p{text-align: center;}
+    
+    .layer_mask {
+    position: absolute;
+    text-align: center;
+    top: 0%;
+    left: 0;
+    color: white;
+    right: 0;
+    padding: 10px;
+}
+    
+    
+    .inner-service h3 {
+    float: left;
+    margin: 12px 0 12px 0;
+    padding: 0px;
+    width: 100%;
+    font-size: 16px;
+}
+    
+    .inner-service {
+    position: relative;
+    margin: 0 0 10px 0;
+}
+    
+    .some_padd {
+    padding: 10px;
+}
+    
+    .some_padd2 {
+    padding: 10px;
+}
+    
+    .inner-service p {
+    float: left;
+    margin: 0px 0px 28px 0;
+    padding: 0px;
+    width: 100%;
+}
+    
+    .some_padd2 .inner-service h3 {
+    float: left;
+    margin: 0 0 32px 0;
+    }
+    
+    
+    .footr-logo {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+    .footr-logo{float: none;}
+    
+    .inner-about {
+    float: left;
+    margin: 22px 0 0 0;
+    padding: 0px;
+    width: 100%;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    .navbar-1 {
+    min-height: 1px;
+    margin-bottom: 0;
+    background-color: transparent;
+    border-radius: 0px;
+    width: 100%;
+    margin: 0px !important;
+    padding: 16px 0 20px 0;
+    border: none;
+    float: left;
+    border-bottom: 1px solid #8f58a8;
+    position: relative;
+    z-index: 100;
+}
+.inner-msge img {
+    float: right;
+    margin: 25px 0 -9px 0;
+    padding: 0px;
+    width: 5%;
+}
+    .store_border {
+        border-top: 1px solid #fff;
+        float: right;
+        margin: 20px 0 0;
+        padding: 15px 0 0;
+        width: 100%;
+        border-left: none;
+    }
+    
+    .heder_nav_main .navbar-default .navbar-nav > li > a {
+        font-size: 10px;
+        font-weight: 400;
+        padding: 15px 6px;
+    }
+
+
+    
+    .health_content_col p span.pro_bold {
+        font-size: 30px;
+        font-weight: 700;
+        margin: 5px 5px 0 0;
+        float: left;
+        width: 100%;
+    }
+    
+    .health_content_col p {
+        float: left;
+        margin: 5px 0px 8px 0px;
+        padding: 0px;
+        width: 100%;
+        text-align: center;
+        font-size: 17px;
+        color: #53585a;
+        font-weight: 400;
+    }
+    
+    .cip_total_count{float: left;  width: 100%;}
+    
+    .health_content_col p span{line-height: 31px;}
+    
+    
+    
+    .navigation_main ul {
+        margin: 0 auto;
+        width: 159px;
+        float: none;
+    }
+    
+
+    .list_scnd{float: right !important; width: auto !important;}
+    .list_scnd li{ width: auto !important; clear: left !important;}
+    .inner-about ul li a{font-weight: bold;}
+    
+    
+    .lower_section_price2 {
+
+        margin: 10px 0 69px 0;
+
+    }
+    
+    .bundle {
+        float: left;
+        margin: 22px 0 0 0;
+        padding: 55px 0 55px 0;
+    }
+    
+    
+    
+    
+    
+    
+
+}
+
+
+
+
+    
+
+
+@media only screen and (min-width:320px) and (max-width:480px) 
+{
+    
+    
+    .items_counter {
+        background-color: #fff;
+        width: 20px;
+        position: absolute;
+        top: -7px;
+        left: 7px;
+        line-height: 20px;
+        text-align: center;
+        height: 20px;
+        border-radius: 100%;
+        color: #000;
+        font-weight: bold;
+
+    }
+    
+    .shopping_cart img{ width: 31px;}
+    .inner-bndl h1{font-size: 24px;}
+    .logo img{ max-width: 70px;}
+    .header_main .container{padding: 0 20px;}
+    .logo {
+        float: left;
+        margin: 12px 0 0 0;
+    }
+    
+    .layer_mask_inner {
+    position: absolute;
+    width: 100%;
+        top: 27%;
+    }
+    
+    .layer_mask_inner2 {
+        top: 33% !important;
+    }
+    
+    
+    .lower_section_price2 h3 {
+        margin: 0px 0 27px 0;
+        padding: 0px;
+        width: 100%;
+        text-align: center;
+        color: #000000;
+        font-size: 22px;
+        font-weight: 700;
+
+    }
+    
+   
+}
+
+
+@media only screen and (min-width:480px) and (max-width:670px) 
+{
+.layer_mask_inner2 {
+    top: 39% !important;
+}
+    
+}
+
+
+@media only screen and (min-width:320px) and (max-width:400px) 
+{
+    
+     .layer_mask_inner {
+    position: absolute;
+    width: 100%;
+        top: 0;
+    }
+    
+    .layer_mask_inner2 {
+        top: 29% !important;
+    }
+    
+    .morning_pck_yellow p{font-size: 12px;}
+    .morning_pck_yellow h6{font-size: 15px; line-height: 30px;}
+    
+    
+}
+
+
+
+
+
+
+
+
+

@@ -18,13 +18,19 @@
                 <div class="row">
                     <div class="card-body">
                         <div class="row">
-                        <form method="post" action="{{route('admin.services.update', [$data->id])}}">
+                        <form method="post" action="{{route('admin.services.update', [$data->id])}}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="col-md-10">
                                 <div class="form-group">
                                     <label>Name</label>
                                     <input type="text" class="form-control" id="basicInput" placeholder="Enter name" value="{{$data->name}}" name="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Icon</label><br>
+                                    <input type="file" name="image" id="customFile">
+                                    <img src="{{asset('public/images/'.$data->image)}}" height="50"/>
                                 </div>
         
                                 <div class="form-group">

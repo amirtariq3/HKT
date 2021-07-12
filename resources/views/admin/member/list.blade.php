@@ -27,9 +27,7 @@
                                         <th>Name</th>
                                         <th>Company</th>
                                         <th>Designation</th>
-                                        <th>Phone</th>
-                                        <th>Email</th>
-                                        
+                                        <th style="width: 20%">Phone/EMAIL</th>
                                         <th>Status</th>
                                         <th width="100px">Action</th>
                                     </tr>
@@ -54,8 +52,11 @@
                                     {data: 'name', name: 'name'},
                                     {data: 'company', name: 'company'},
                                     {data: 'designation', name: 'designation'},
-                                    {data: 'phone', name: 'phone'},
-                                    {data: 'email', name: 'email'},
+                                    {
+                                    data : function(row){
+                                     return '<div><small>'+row.phone+'<br style="margin:0px;">'+row.email+'</small></div>';
+                                    }
+                                     },
                       
                                     {
                                     'data' : function(row){

@@ -1,0 +1,329 @@
+.responsive-slider {
+  width: 100%;
+  position: relative;
+}
+.responsive-slider [data-animate] {
+  opacity: 0;
+}
+.responsive-slider .slides {
+  position: relative;
+  overflow: hidden;
+    max-height: 500px;
+}
+.responsive-slider .slides ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 0;
+}
+.responsive-slider .slides ul li {
+  display: inline-block;
+  max-width: 100%;
+  width:100%;
+}
+.responsive-slider .slides ul li .slide-body {
+  position: relative;
+  max-width: 100%;
+  font-size: 14px;
+}
+.responsive-slider .slides ul li .slide-body img {
+  max-width: 100%;
+}
+.responsive-slider .slides ul li .slide-body .caption {
+  position: absolute;
+  text-shadow: 0px 1px 0px #000000;
+}
+.responsive-slider .slides ul li .slide-body .caption.header {
+	left: 21%;
+	top: 78%;
+}
+.responsive-slider .slides ul li .slide-body .caption.header h2 {
+  font-size: 1.4vw;
+  color:#58595b;
+}
+.responsive-slider .slides ul li .slide-body .caption.header h2 i {
+  font-size: 35px;
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .responsive-slider .slides ul li .slide-body .caption.header h2 {
+    font-size: 25px;
+  }
+  .responsive-slider .slides ul li .slide-body .caption.header h2 i {
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .responsive-slider .slides ul li .slide-body .caption.header h2 {
+    font-size: 16px;
+  }
+  .responsive-slider .slides ul li .slide-body .caption.header h2 i {
+    font-size: 14px;
+  }
+}
+.responsive-slider .slides ul li .slide-body .caption.sub {
+	
+	font-weight: bold;
+	right: 3px;
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .responsive-slider .slides ul li .slide-body .caption.sub {
+    font-size: 11px;
+    bottom: 0px;
+    right: -10px;
+  }
+}
+@media (max-width: 480px) {
+  .responsive-slider .slides ul li .slide-body .caption.sub {
+    font-size: 10px;
+    bottom: 5px;
+    right: 0;
+  }
+}
+.responsive-slider .slides ul li .slide-body .caption.img-html5 {
+	right: 25%;
+	top: 23%;
+	width: 27%;
+}
+.responsive-slider .slides ul li .slide-body .caption.img-html5 img {
+  max-width: 100%;
+}
+.responsive-slider .slides ul li .slide-body .caption.img-css3 {
+	right: 54%;
+	top: 35%;
+	width: 27%;
+}
+.responsive-slider .slides ul li .slide-body .caption.img-css3 img {
+  max-width: 100%;
+}
+.responsive-slider .slides ul li .slide-body .caption.img-bootstrap {
+  top: 48%;
+  right: 12%;
+  width: 11%;
+}
+.responsive-slider .slides ul li .slide-body .caption.img-bootstrap img {
+  max-width: 100%;
+}
+.responsive-slider .slides ul li .slide-body .caption.img-twitter {
+  top: 19%;
+  right: 12%;
+  width: 11%;
+}
+.responsive-slider .slides ul li .slide-body .caption.img-twitter img {
+  max-width: 100%;
+}
+.responsive-slider .slides ul li .slide-body .caption.img-jquery {
+  top: 66%;
+  right: 12%;
+  width: 33%;
+}
+.responsive-slider .slides ul li .slide-body .caption.img-jquery img {
+  max-width: 100%;
+}
+.responsive-slider .slider-control {
+	background-color: #000;
+	color: #fff;
+	display: inline-block;
+	font-size: 54px;
+	height: 100px;
+	line-height: 0;
+	opacity: 0.5;
+	padding: 24px 16px 9px !important;
+	position: absolute;
+	top: 40%;
+	width: 50px;
+  
+}
+.responsive-slider .slider-control.left {
+  left: 0px;
+  padding-left: 0;
+  -webkit-border-radius: 0px 6px 6px 0px;
+  border-radius: 0px 6px 6px 0px;
+  text-align:right;
+}
+.responsive-slider .slider-control.left:hover {
+  text-decoration: none;
+  padding-left: 10px;
+  width:100px;
+  opacity: 100;
+  background:#005EB8;
+  
+}
+.responsive-slider .slider-control.right {
+  right: 0px;
+  padding-right: 0;
+  -webkit-border-radius: 6px 0px 0px 6px;
+  border-radius: 6px 0px 0px 6px;
+}
+.responsive-slider .slider-control.right:hover {
+  text-decoration: none;
+  padding-right: 10px;
+   width:100px;
+   opacity: 100;
+   background:#005EB8;
+}
+@media (max-width: 480px) {
+  .responsive-slider .slider-control.left,
+  .responsive-slider .slider-control.right {
+    display: none;
+  }
+}
+.responsive-slider .pages {
+	bottom: 20px;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	width: 100%;
+    text-align: center;
+}
+.responsive-slider .pages .page {
+    background: #000;
+    border: 3px solid #000;
+    border-radius: 50%;
+    color: transparent;
+    display: inline-block;
+    height: 15px;
+    margin-bottom: 0px;
+    width: 15px;
+}
+.responsive-slider .pages .page.active {
+  border: 3px solid #083D77;
+    background-color: #083D77;
+}
+
+.caption img{
+	width:100%;
+}
+
+/*slider 1 adjusment*/
+.detail_1 {max-width: 16%;top: 0 !important; left: 38% !important;}
+.slide_1_left_tree{left: 0 !important;width: 9%;top: 27% !important;}
+.slide_1_right_tree{max-width: 10%;right: 0 !important;top: 8% !important;}
+
+.lg_logo {
+    left: 0% ;
+    top: 16% ;
+     background: rgba(8, 61, 119, 0.45);
+    border-radius: 5px;
+    float: left;
+    margin-bottom: 45px;
+    margin-top: 99px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    padding: 20px 25px;
+    
+}
+
+
+   
+
+
+
+.slide_title{left: 10% !important;max-width: 25%;top: 5% !important;}
+.brands_slide1{bottom: 8% !important;max-width: 8%;right: 15% !important;}
+.brands_slide1 img{width:100%;}
+.sub{right:2%}
+.text1 {bottom: 10% !important;left: 10%;font-size: 1.4vw;color:#58595b;}
+
+/*slider 2 adjusment*/
+.detail_2{
+	left: 60% !important;
+	max-width: 16%;
+	top: 0 !important;
+}
+.product2 {
+  right: 29% !important;
+  top: 9% !important;
+  width: 33% !important;
+}
+
+.slide_title2{left: 10% !important;max-width: 25%;top: 5% !important;}
+
+.brands_slide2 {
+  bottom: 5% !important;
+  left: 14% !important;
+  max-width: 55%;
+}
+
+/*slider 3 adjusment*/
+
+.title3 {
+    left: 6% !important;
+    top: 56% !important;
+    width: 48%;
+}
+.product3 {
+  right: 16% !important;
+  top: 17% !important;
+  width: 44% !important;
+}
+
+.brand3{
+	bottom: 5% !important;
+	max-width: 10%;
+	right: 10% !important;
+}
+.brands3-1{
+	bottom: 4% !important;
+	max-width: 20%;
+	left: 5% !important;
+}
+
+/*defoult css main banner*/
+.brang_logo_bottom_left{
+	bottom: 5% !important;
+	left: 14% !important;
+	width: 17%;
+}
+.brang_logo_top_right {
+	width: 11%;
+	right: 10% !important;
+	top: 5% !important;
+}
+.brang_logo_bottom_right {
+	bottom: 5% !important;
+	max-width: 10%;
+	right: 10% !important;
+}
+.brang_title_top_left {
+	left: 5% !important;
+	top: 5% !important;
+	width: 25%;
+}
+/*used css*/
+
+/*slider 6 adjusment*/
+.detail_6 {
+  left: 22% !important;
+  max-width: 16%;
+  top: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

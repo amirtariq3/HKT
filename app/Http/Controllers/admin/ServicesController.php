@@ -49,6 +49,7 @@ class ServicesController extends Controller
         }else{
             $cat = Service::create([
                 'name'=> $r->name, 
+                'image'=> ($r->image)? $this->upload($r->image): null,
                 'detail'=>$r->detail??null,
                 'status' => $r->status??1
             ]);
@@ -95,6 +96,7 @@ class ServicesController extends Controller
         $data=Service::find($id);
         //echo $data;
         $data->name=$r->name??$data->name;
+        $data->image=($r->image)? $this->upload($r->image):$data->image;
         $data->detail=$r->detail??$data->detail;
         $data->status=$r->status;
         $data->save();
@@ -122,5 +124,17 @@ class ServicesController extends Controller
       {
         $data =Service::get();
         return Datatables::of($data)->make(true);
+    }
+
+    public function upload($image, $path="public/images")
+    {
+        if($image){
+            $file = $image;
+            $name =  uniqid().".".$file->getClientOriginalExtension();
+            $file->move($path, $name);
+            return $name;
+        }else{
+            return null;
+        }
     }
 }

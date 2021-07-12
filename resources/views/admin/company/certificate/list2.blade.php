@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="card-body">
                         <div class="row">
-                            <h3>Company Service List</h3>
+                            <h3>Company Certificate List</h3>
                             <div class="btn">
                                 <a class="btn btn-primary pull-right" href="{{route('admin.company.create.certificate', [$c->id])}}" style="margin-left: 780px; margin-bottom:18px;">Add New</a>
                                 </div>
@@ -32,7 +32,7 @@
                                                 <td>{{ $i->name }}</td>
                                                 <td>
                                     
-                                                    <a href="{{route('admin.company_service.edit', [$c->id])}}"><i data-feather="edit" width="20"></i></a>
+                                                    <a href="{{route('admin.company_certificate.edit', [$c->id])}}"><i data-feather="edit" width="20"></i></a>
                                                     <a href=""><i data-feather="trash-2" width="20"></i></a>
                                                 </td>
                                             </tr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2021 at 02:42 PM
+-- Generation Time: Jul 12, 2021 at 12:59 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -92,6 +92,26 @@ CREATE TABLE `airports` (
 INSERT INTO `airports` (`id`, `name`, `iata`, `icao`, `country`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Aalborg Airport AMBA', 'AAL', 'EKYT', 'Denmark', '1', '2021-06-24 04:58:08', '2021-06-24 05:05:59'),
 (2, 'Aarhus Airport', 'AAR', 'EKAH', 'Denmark', '1', '2021-06-24 04:59:07', '2021-06-24 04:59:07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certificate-company`
+--
+
+CREATE TABLE `certificate-company` (
+  `company_id` int(11) NOT NULL,
+  `certificate_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `certificate-company`
+--
+
+INSERT INTO `certificate-company` (`company_id`, `certificate_id`) VALUES
+(2, 1),
+(2, 2),
+(4, 2);
 
 -- --------------------------------------------------------
 
@@ -185,20 +205,9 @@ INSERT INTO `companies` (`id`, `member_id`, `name`, `address`, `country_id`, `ci
 (1, '2', 'techno', 'test', '2', '5', '5', 'amirtariq3@gmail.com', '03045569873', NULL, NULL, '1-50', NULL, NULL, '12', 'test1', '60dc3269027bc.png', NULL, '1', '2021-06-30 03:59:21', '2021-07-02 02:23:35'),
 (2, '1', 'Aries Global Logistics JSC', '196/1/29 Cong Hoa Rd., Ward 12, Tan Binh Dist.', '1', '1', '1', 'rfq@ariesglobal.vn', '+842862662999', NULL, 'www.ariesglobal.vn', '1-50', NULL, '2018', '08:00 - 18:00', 'test2', '60dda62c32495.jpg', NULL, '1', '2021-06-30 05:15:38', '2021-07-01 06:25:32'),
 (3, '1', 'HKT Mobile', 'Main Hall Road Lahore', '1', '2', NULL, 'hktmobile@gmail.com', '03045569873', NULL, NULL, '100-200', NULL, NULL, '12', 'HKT Mobile Phone Accessories Company', '60dedad7d8232.png', NULL, '1', '2021-07-02 04:22:31', '2021-07-02 04:22:31'),
-(4, '3', 'HKT Designs', 'HKT, Main Hall Road, Lahore', '1', '2', NULL, 'hkmobile@gmail.com', '03036864075', NULL, NULL, '1-50', NULL, NULL, '08:00 - 18:00', 'Mobile Accessories Company', '60dedd2bf02cb.jpg', NULL, '1', '2021-07-02 04:32:27', '2021-07-02 04:32:27'),
-(6, '3', 'SL Shipping And Logistics Pvt.Ltd', 'ROOM NO-301, 3RD FLOOR, AGGARWAL SQUARE,\r\nPLOT-10 POCKET- 4, DWARKA,\r\nNEW DELHI -110075. INDIA', '2', '5', NULL, 'aminahmad09@gmail.com', '011-455 961 88 / 456 816 77', '+91-11-9717687697.', 'www.sllogistics.in', '1-50', NULL, NULL, '00:09 to 18:00', 'SL Shipping And Logistics Pvt.Ltd. is a specialist in the services of Freight Forwarding, Warehousing and Project Cargo Handling. We can provide all logistics support to the most demanding sectors of the industries. SL Shipping And Logistics Pvt.Ltd. is a service oriented company and we work closely with our clients so that we can focus on the customer’s requirement, their objectives and expectations in order to provide optimum value and support. We are committed to surpass all highest level of expectations and strive for success on a daily basis.\r\n\r\nWe have a dynamic team which is capable of handling the most challenging environment as well as monitor and manage the operations from end to end. We aim to be recognized as one of the best in the services of Freight forwarding and logistics companies in India and worldwide by our customers, competitors and supply chain.\r\n\r\nWe aim to provide utmost satisfaction by providing our customers with high quality and cost effective services through constant update of information to accomplish a long term successful business relation.', '60deed19323f1.png', NULL, '1', '2021-07-02 05:40:25', '2021-07-02 05:40:25'),
+(4, '5', 'HKT Designs', 'HKT, Main Hall Road, Lahore', '1', '2', '2', 'hkmobile@gmail.com', '03036864075', NULL, NULL, '1-50', NULL, NULL, '08:00 - 18:00', 'Mobile Accessories Companys', '60e826f4682a9.jpg', NULL, '1', '2021-07-02 04:32:27', '2021-07-09 05:37:40'),
+(6, '4', 'SL Shipping And Logistics Pvt.Ltd', 'ROOM NO-301, 3RD FLOOR, AGGARWAL SQUARE,\r\nPLOT-10 POCKET- 4, DWARKA,\r\nNEW DELHI -110075. INDIA', '2', '5', NULL, 'aminahmad09@gmail.com', '011-455 961 88 / 456 816 77', '+91-11-9717687697.', 'www.sllogistics.in', '1-50', NULL, NULL, '00:09 to 18:00', 'SL Shipping And Logistics Pvt.Ltd. is a specialist in the services of Freight Forwarding, Warehousing and Project Cargo Handling. We can provide all logistics support to the most demanding sectors of the industries. SL Shipping And Logistics Pvt.Ltd. is a service oriented company and we work closely with our clients so that we can focus on the customer’s requirement, their objectives and expectations in order to provide optimum value and support. We are committed to surpass all highest level of expectations and strive for success on a daily basis.\r\n\r\nWe have a dynamic team which is capable of handling the most challenging environment as well as monitor and manage the operations from end to end. We aim to be recognized as one of the best in the services of Freight forwarding and logistics companies in India and worldwide by our customers, competitors and supply chain.\r\n\r\nWe aim to provide utmost satisfaction by providing our customers with high quality and cost effective services through constant update of information to accomplish a long term successful business relation.', '60deed19323f1.png', NULL, '1', '2021-07-02 05:40:25', '2021-07-02 05:40:25'),
 (7, '3', 'ADC LINE JAPAN CORPORATION', 'BAYSIDE KANNAI BLDG 6F, 3-8-1 , OUGI-CHO, NAKA-KU, \r\nYOKOHAMA-SHI , JAPAN, POST CODE: 231-0027', '1', '3', '231-0027', 'kumara@adcline.com', '+81-(0)45-228-8303', '+81-(0)80-4611-4370', 'www.adcline.com', '100-200', NULL, '2006', '00:09 to 18:00', 'Established in December 2006, ADC Line Japan Corporation specializes in packing & shipping of motor vehicles in containers for used & new vehicles from Japan to any part of the world. ADC Line Japan currently have office in Yokohama plus have own packing & shipping establishments in Chiba through Yokohama port & in Nagoya..', '60e028125951a.png', NULL, '1', '2021-07-03 04:04:18', '2021-07-03 04:04:18');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `company-certificate`
---
-
-CREATE TABLE `company-certificate` (
-  `company_id` int(11) NOT NULL,
-  `certificate_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -224,7 +233,8 @@ CREATE TABLE `company_branches` (
 --
 
 INSERT INTO `company_branches` (`id`, `company_id`, `branch`, `address`, `country_id`, `city_id`, `phone`, `email`, `created_at`, `updated_at`) VALUES
-(1, '2', 'Aries Global Logistics JSC - Ha Noi Bran', '23 Tran Kim Xuyen Rd., Yen Hoa Ward, Cau Giay Dist.', '1', '1', '+842462662999', 'rfq@ariesglobal.vn', '2021-07-01 03:25:27', '2021-07-05 07:04:22');
+(1, '4', 'Aries Global Logistics JSC - Ha Noi Bran', '23 Tran Kim Xuyen Rd., Yen Hoa Ward, Cau Giay Dist.', '1', '1', '+842462662999', 'rfq@ariesglobal.vn', '2021-07-01 03:25:27', '2021-07-05 07:04:22'),
+(2, '4', 'JMH Logistics Ltd.', '1125/A, B Nag Lane, Rahaman Height,Gosaildanga, Agrabad C/A,Chittagong-4100', '1', '1', '+8801929912854', 'cgp@jmhlogisticsgroup.com', '2021-07-09 06:35:17', '2021-07-09 06:35:17');
 
 -- --------------------------------------------------------
 
@@ -272,7 +282,9 @@ CREATE TABLE `company_directors` (
 
 INSERT INTO `company_directors` (`id`, `company_id`, `name`, `email`, `phone`, `designation`, `image`, `detail`, `created_at`, `updated_at`) VALUES
 (1, '2', 'Philibert Challan Belvals', 'philibert@asia-relocation.com', '9175725210', 'CEO', '60dc4f6d00abd.jpg', NULL, '2021-06-30 06:03:09', '2021-07-05 05:54:41'),
-(2, '2', 'Dhivessh K Padayachee', 'dhivessh@ariesglobal.co.za', '27828720858', 'Director', '60e19247d9d66.jpg', NULL, '2021-07-04 05:49:43', '2021-07-04 05:49:43');
+(2, '4', 'Dhivessh K Padayachee', 'dhivessh@ariesglobal.co.za', '27828720858', 'Director', '60e19247d9d66.jpg', NULL, '2021-07-04 05:49:43', '2021-07-04 05:49:43'),
+(5, '4', 'Bruce Chung', 'ops@triumphgates.com', '84903724716', 'CEO', '60e82b04020c3.jpg', NULL, '2021-07-09 05:55:00', '2021-07-09 05:55:00'),
+(6, '7', 'Bruce Chung', 'ops@triumphgates.com', '84903724716', 'CEO', '60ec13d4679d0.jpg', NULL, '2021-07-12 05:05:08', '2021-07-12 05:05:08');
 
 -- --------------------------------------------------------
 
@@ -320,8 +332,10 @@ CREATE TABLE `company_representatives` (
 --
 
 INSERT INTO `company_representatives` (`id`, `company_id`, `name`, `email`, `phone`, `whatsupp`, `representative_id`, `created_at`, `updated_at`) VALUES
-(1, '2', 'Kate Nguyen', 'cus03.hcm@ariesglobal.vn', '+842862662999', NULL, '1', '2021-06-30 06:44:43', '2021-06-30 06:44:43'),
-(2, '2', 'Joyce Min', 'joyce@ltfcargo.com', '+82 2 722 5253', NULL, '1', '2021-07-04 06:36:41', '2021-07-04 06:36:41');
+(1, '4', 'Kate Nguyen', 'cus03.hcm@ariesglobal.vn', '+842862662999', NULL, '1', '2021-06-30 06:44:43', '2021-06-30 06:44:43'),
+(2, '4', 'Joyce Min', 'joyce@ltfcargo.com', '+82 2 722 5253', NULL, '1', '2021-07-04 06:36:41', '2021-07-04 06:36:41'),
+(4, '4', 'Steven', 'steven@qdzhongqi.cn', '03045569873', NULL, '2', '2021-07-09 06:14:26', '2021-07-09 06:14:26'),
+(5, '7', 'Kate Nguyen', 'cus03.hcm@ariesglobal.vn', '+8801929912854', NULL, '1', '2021-07-12 05:06:02', '2021-07-12 05:06:02');
 
 -- --------------------------------------------------------
 
@@ -345,7 +359,12 @@ INSERT INTO `company_service` (`company_id`, `service_id`) VALUES
 (2, 5),
 (2, 6),
 (2, 4),
-(2, 3);
+(2, 3),
+(4, 3),
+(4, 4),
+(4, 5),
+(4, 6),
+(4, 2);
 
 -- --------------------------------------------------------
 
@@ -473,9 +492,11 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id`, `name`, `gender`, `company`, `designation`, `phone`, `mobile`, `email`, `image`, `password`, `skype`, `whatsupp`, `viber`, `gtalk`, `line`, `other`, `membership_type_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Tempomos Gut', 'mail', 'google', 'worker', '83432424916', 'worker', 'tempоо9999@gmail.com', 'tempоо9999@gmail.com', '$2y$10$.Sy2J2ib1YnUFwcgsirdu.v/P0..F40zbKwmFpUB66ifKDmYTLwK2', NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '2021-06-29 03:06:32', '2021-07-02 02:34:19'),
+(1, 'Tempomos Gut', 'mail', 'google', 'worker', '83432424916', 'worker', 'tempоо9999@gmail.com', '60dedccbd1a80.jpg', '$2y$10$.Sy2J2ib1YnUFwcgsirdu.v/P0..F40zbKwmFpUB66ifKDmYTLwK2', NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '2021-06-29 03:06:32', '2021-07-02 02:34:19'),
 (2, 'AldesylGualk', 'mail', 'google', 'worker', '88339535332', 'worker', 'alex980vasiljeva@yandex.ru', 'alex980vasiljeva@yandex.ru', '$2y$10$0sZQpP9wMHIYoT0oNg3OQOlJZ2EaoqknwzjpkOXKxVDUMHSwKjSwm', NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '2021-06-29 03:07:55', '2021-06-29 08:49:00'),
-(3, 'Aamir Tariq', 'mail', 'Codewoxy', 'Worker', '0302-3485948', NULL, 'amirtariq3@gmail.com', '60dedccbd1a80.jpg', '$2y$10$l9L0gG.GTmiWTbTMMipdYe2dDsoC5LecZk22dlX3DA1UwFRJMs/9e', NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '2021-07-02 04:30:52', '2021-07-02 04:30:52');
+(3, 'Aamir Tariq', 'Male', 'Codewoxy', 'Worker', '0302-3485948', 'Workers', 'amirtariq3@gmail.com', '60e824f051ac4.jpg', '$2y$10$hiRPt4Ia8tYSC.k11sfsE.Gs4.CWExvEPH9CkUSq45w9wZIqqgi12', NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '2021-07-02 04:30:52', '2021-07-09 05:30:09'),
+(4, 'Umair Tariq', 'Male', 'AT Alpha', 'Director', '03045569873', NULL, 'umair3@gmail.com', '60e592ef9d300.jpg', '$2y$10$c4BJ6kZV9zSSNeD3ryIqM.BP6gWyYrPV2JumTg6Fq.sHNvG/u60nO', NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '2021-07-07 06:41:35', '2021-07-07 06:41:35'),
+(5, 'Umair', 'mail', 'AT Alpha', 'worker', '03023125562', NULL, 'umair34@gmail.com', '60e593de23e3b.jpg', '$2y$10$2KStlS9J6WPu4WZ5EZvsIe2JhOdw9oMVgKNspFvzoajjRzzia5Qti', NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '2021-07-07 06:45:34', '2021-07-07 06:45:34');
 
 -- --------------------------------------------------------
 
@@ -571,7 +592,10 @@ CREATE TABLE `news` (
 
 INSERT INTO `news` (`id`, `news_category_id`, `title`, `image`, `short_detail`, `description`, `member_id`, `shares`, `status`, `created_at`, `updated_at`) VALUES
 (1, '2', 'AGL Supply Chain (Pvt) Limited', '60db0794a77a4.jpg', 'During novel Coronavirus pandemic AGL Pakistan offices are working normally from Monday to Friday.', 'During novel Coronavirus pandemic AGL Pakistan offices are working normally from Monday to Friday.\r\n\r\nWe are available to support you even after working hours: \r\n\r\nSend email:\r\n\r\nLahore / Islamabad/ Faisalabad/ Sialkot inquiries to:\r\n\r\nAWAISALI@AGL-SC.COM \r\nZafarali@AGL-SC.COM \r\n\r\nKarachi/ Port Qasim / Afghanistan inquiries:\r\n\r\nNISHAASIM@AGL-SC.COM \r\nTOUQIR@ARIESGLOBAL.COM\r\n\r\nCorporate issue:\r\nCorporate@ariesglobal.com \r\nCell: +92 336 419 4449\r\nWhatsApp and WeChat \r\n\r\nWWW.ARIESGLOBAL.COM', '1', NULL, '1', '2021-06-29 06:17:36', '2021-06-29 08:19:30'),
-(2, '1', 'CMA CGM sells first eight ports in refin', '60db07a5708e3.jpg', 'BY TOMAS KRISTIANSEN - ShippingWatch\r\nPublished: 26.03.20 at 15:21', 'French container line CMA CGM has carried out the first part of the refinancing plan the carrier announced in November. It demonstrates the group\'s resilience, says Chair and CEO Rodolphe SaadÃ©.', '1', '0', '1', '2021-06-29 06:20:33', '2021-06-29 06:44:37');
+(2, '1', 'CMA CGM sells first eight ports in refin', '60e6ac59137f8.jpg', 'The Emirates group has announced a cost-reduction plan, as the outlook for travel demand remains weak due to the coronavirus (COVID-19) pandemic.', 'Emirates chairman and chief executive, HH Sheikh Ahmed bin Saeed Al Maktoum, explained: �Emirates Group has a strong balance sheet, and substantial cash liquidity, and we can, and will, with appropriate and timely action, survive through a prolonged period of reduced flight schedules, so that we are adequately prepared for the return to normality.�\r\n\r\nThe group�s cost-saving plan includes: postponing or cancelling discretionary expenditure; a freeze on all non-essential recruitment and consultancy work; working with suppliers to find cost savings and efficiency; encouraging employees to take paid or unpaid leave in light of reduced flying capacity; a temporary reduction of basic salary for the majority of Emirates Group employees for three months, ranging from 25% to 50% (junior level employees exempt from this); and the presidents of Emirates and dnata, Sir Tim Clark and Gary Chapman, will take a 100% basic salary cut for three months.\r\n\r\nOn the decision to reduce basic salary, Sheikh Ahmed explained: �Rather than ask employees to leave the business, we chose to implement a temporary basic salary cut as we want to protect our workforce and keep our talented and skilled people, as much as possible. We want to avoid cutting jobs. When demand picks up again, we also want to be able to quickly ramp up and resume services for our customers.�\r\n\r\nEmirates also stated that it is monitoring the current situation and that it keeps in regular contact with relevant authorities so that it can implement the latest guidance to its customers and staff safe and healthy.\r\n\r\nThe group has provided its frontline employees, such as crew and airport teams, with support to stay safe while on duty, including hand sanitizers and masks where required.\r\n\r\nSheikh Ahmed said: �These are unprecedented times for the airline and travel industry, but we will get through it. Our business is taking a hit, but what matters in the long run is that we do the right thing for our customers, our employees, and the communities we serve. With the support and unity that we have seen from our employees, partners, customers, and other stakeholders, I�m confident that Emirates can tackle this challenge and come out stronger.�\r\n\r\nVirgin Atlantic implemented a �drastic� cost-cutting exercise to offset a slump in demand as a result of the coronavirus outbreak.', '1', '0', '1', '2021-06-29 06:20:33', '2021-07-08 02:42:17'),
+(3, '1', 'Swiss to offer up passenger aircraft', '60e6be0bd4645.jpg', 'Swiss WorldCargo, the air cargo division of SWISS, will operate cargo-only flights on some passenger aircraft beginning this week.', 'Swiss WorldCargo is a belly carrier, transporting high-value and care-intensive goods on the existing SWISS passenger network.\r\n\r\nIn these unprecedented times, the carrier is committed to continue maintaining global supply chains and delivering goods on behalf of its customers.\r\n\r\nThis week, Swiss WorldCargo will fly twice between Zurich and Hong Kong, the first of several planned charter flights.\r\n\r\nThe route will be serviced by the Airbus A340-300, and additional destinations and aircraft may be selected based on customer needs for global shipping.\r\n\r\n�Despite the slowdown in global air travel, we are seeing an ongoing demand for the transportation of goods,� said Ashwin Bhat, head of cargo, Swiss International Air Lines.\r\n\r\n�At Swiss WorldCargo, we are therefore committed to supporting logistics and customer needs, especially for the shipping of sensitive goods such as medicines or pharmaceuticals. We aim to continue to offer the Swiss quality and consistency we are known for throughout the industry.�\r\n\r\nOver the last few days several other airlines have taken similar steps:', '1', NULL, '1', '2021-07-08 03:57:47', '2021-07-08 03:57:47'),
+(4, '1', 'Astral adjusts freighter schedule', '60e6bf5665060.jpg', 'African freighter operator Astral Aviation has adjusted its flight schedule in response to the coronavirus outbreak.', 'The carrier said that key staff will continue working at its headquarters at the Jomo Kenyatta International Airport while the rest of its staff will be working from home and will be accessible at all times by phone and email.\r\n\r\nAstral crew will be in compliance with the Kenya CAA Directives, it added.\r\n\r\nWhile aircraft will continue to fly, it has made some adjustments to its schedules.\r\n\r\nFlights from Nairobi to Juba, Mogadishu and Mwanza will each be halved from two to one per week.\r\n\r\nFlights to Zanzibar and Pemba will operate every two weeks.\r\n\r\nIn addition, Astral will operate full-charters within East, Central, Southern, Horn of Africa & Indian Ocean.\r\n\r\nThe carrier�s fleet includes B747-400F, B727F, DC-9F and F27F aircraft.', '1', NULL, '1', '2021-07-08 04:03:18', '2021-07-08 04:03:18'),
+(5, '2', '4 People on board Ruby Princess', '60e8382b1d4a7.png', 'Four people onboard Ruby Princess cruise ship, operated by Princess Cruises, have tested positive to coronavirus, the New South Wales Ministry of Health (NSW Health) informed.', 'These include three guests and a crew member, according to Princess Cruises.\r\n\r\n�Please be advised that all four had reported flu-like symptoms during the cruise and, along with their stateroom occupants, were in isolation on board the ship minimising contact with other guests and crew.\r\n\r\n�We have assisted NSW Health to make contact with all guests who arrived in Sydney yesterday,� the company said on Thursday.\r\n\r\nThe Ruby Princess cruise to New Zealand left Sydney on March 8, and returned to Sydney and docked on March 18.\r\n\r\n�2647 passengers were on board and disembarked yesterday (March 18) and all were advised to self-isolate at home or in their accommodation for a period of 14 days as part of the management of returned travellers, in accordance with the Public Health Order for quarantine that is in place in New South Wales,� NSW Health said.\r\n\r\nThe three passengers have disembarked the ship and are receiving medical attention, while the crew member is in isolation on board the vessel.\r\n\r\nQuarantine of other crew on board is underway in consultation with the on board medical team, the health ministry said.\r\n\r\nNinety-eight of the 1148 crew disembarked the ship and have left NSW for their home countries. The rest of the crew remain in isolation on board the ship which is currently offshore.\r\n\r\nNSW Health added that five people on board with influenza-like illness were tested in Wellington, New Zealand on March 14, and were all negative for COVID-19.\r\n\r\n�NSW Health officials have emailed and sent text messages to all cruise passengers today to advise of the confirmed cases on board and to reinforce the importance of self-isolation and regular self-monitoring for symptoms. Phone calls are also being made to all passengers,� the health ministry said.\r\n\r\n�NSW Health has notified other states and territories and the National Incident Room of this situation.�\r\n\r\nSixty-three per cent of the passengers are Australian residents, 20 per cent are residents of the United States and the rest are from a variety of other countries.\r\n\r\nAll close contacts of the confirmed cases are expected to be identified and informed.\r\n\r\nNSW has confirmed 382 cases of COVID-19, including interstate residents in NSW health care facilities.\r\n\r\nCoral Princess Update\r\nCoral Princess was required to abruptly depart the port of Buenos Aires late on March 19, before all guests were disembarked, to comply with a decree issued by the President of Argentine, Alberto Fernandez.\r\n\r\n�The decree would require the ship to remain in port for an indeterminate number of days, and no guests would have been permitted to disembark during that time. Therefore, the decision was made to leave port immediately,� Princess Cruises said.\r\n\r\nCoral Princess set sail to Montevideo, Uruguay, where it is scheduled to take delivery of supplies and fuel on March 20.\r\n\r\n�We have been, and will continue to, seek permission to complete guest disembarkation there. Princess Cruises port operations is exploring all avenues, including diplomatic channels. Also, we are working with our shoreside teams on several options to disembark should there be any issues with Montevideo,� the company added.', '3', '0', 'Hidden', '2021-07-09 06:51:07', '2021-07-09 06:51:07');
 
 -- --------------------------------------------------------
 
@@ -593,9 +617,9 @@ CREATE TABLE `news_categories` (
 --
 
 INSERT INTO `news_categories` (`id`, `name`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Airline', '60d9aca6c4418.jpg', '1', '2021-06-28 06:04:06', '2021-06-28 06:34:52'),
-(2, 'Cargo Airports', '60d9ad0f82bd9.jpg', '1', '2021-06-28 06:05:51', '2021-06-28 06:05:51'),
-(4, 'Freight Operator', '60d9b2595a818.jpg', '1', '2021-06-28 06:28:25', '2021-06-28 06:28:25');
+(1, 'Airline', '60e59f366b5d6.jpg', '1', '2021-06-28 06:04:06', '2021-07-07 07:33:58'),
+(2, 'Cargo Airports', '60e59f3e7aa80.jpg', '1', '2021-06-28 06:05:51', '2021-07-07 07:34:06'),
+(4, 'Freight Operator', '60e59f4710c86.jpg', '1', '2021-06-28 06:28:25', '2021-07-07 07:34:15');
 
 -- --------------------------------------------------------
 
@@ -653,6 +677,7 @@ INSERT INTO `reviews` (`id`, `company_id`, `member_id`, `review`, `rating`, `cre
 CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `detail` varchar(255) DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -663,13 +688,13 @@ CREATE TABLE `services` (
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`id`, `name`, `detail`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Packing and labelling', 'test4', 1, '2021-06-23 03:21:46', '2021-06-28 05:30:37'),
-(2, 'Express Handling', 'test 1', 1, '2021-06-23 03:22:15', '2021-06-23 06:26:56'),
-(3, 'Express Handling', 'test2', 1, '2021-06-23 03:22:33', '2021-06-23 06:30:05'),
-(4, 'Inland trucking', 'test3', 1, '2021-06-23 03:26:09', '2021-06-23 06:30:20'),
-(5, 'Express', NULL, 1, '2021-06-25 05:33:43', '2021-06-28 05:15:17'),
-(6, 'Inland trucking', 'test3', 1, '2021-06-28 05:14:59', '2021-06-28 05:14:59');
+INSERT INTO `services` (`id`, `name`, `image`, `detail`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Packing and labelling', '60e585a8b1249.png', 'test4', 1, '2021-06-23 03:21:46', '2021-07-07 05:44:56'),
+(2, 'Express Handling', '60e585c63b64c.png', 'test 1', 1, '2021-06-23 03:22:15', '2021-07-07 05:45:26'),
+(3, 'Express Handling', '60e585d2bfd18.png', 'test2', 1, '2021-06-23 03:22:33', '2021-07-07 05:45:38'),
+(4, 'Inland trucking', '60e585e70b7f0.png', 'test3', 1, '2021-06-23 03:26:09', '2021-07-07 05:45:59'),
+(5, 'Express', '60e585ff28b22.png', NULL, 1, '2021-06-25 05:33:43', '2021-07-07 05:46:23'),
+(6, 'Inland trucking', '60e58613d7fbf.png', 'test3', 1, '2021-06-28 05:14:59', '2021-07-07 05:46:43');
 
 -- --------------------------------------------------------
 
@@ -736,7 +761,7 @@ CREATE TABLE `trade_references` (
   `contact_person` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `detail` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `detail` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -746,7 +771,8 @@ CREATE TABLE `trade_references` (
 --
 
 INSERT INTO `trade_references` (`id`, `company_id`, `name`, `country_id`, `city_id`, `contact_person`, `email`, `phone`, `detail`, `created_at`, `updated_at`) VALUES
-(1, '1', 'Hansa Shipping Agency', '1', '1', 'Shideh Ordiyan', 'shideh@hansanav.com', '+982143312105', 'Thanks and Best Regards,\r\n\r\nShideh Ordiyan  | Sales Coordinator\r\n\r\n                             \r\n\r\nTel :  +9821 43312000 â€“ EXT:105     Direct:   +982143312105           Fax :  +9821 43853940 5th Floor , No. 18 ,  Alvand St. , Argentina Sq.\r\n\r\nTehran â€“ 1514938117  | IRAN\r\n\r\nwebsite | Vcard | Email | map', '2021-06-30 07:24:22', '2021-06-30 07:24:22');
+(1, '4', 'Hansa Shipping Agency', '1', '1', 'Shideh Ordiyan', 'shideh@hansanav.com', '+982143312105', 'Thanks and Best Regards,\r\n\r\nShideh Ordiyan  | Sales Coordinator\r\n\r\n                             \r\n\r\nTel :  +9821 43312000 â€“ EXT:105     Direct:   +982143312105           Fax :  +9821 43853940 5th Floor , No. 18 ,  Alvand St. , Argentina Sq.\r\n\r\nTehran â€“ 1514938117  | IRAN\r\n\r\nwebsite | Vcard | Email | map', '2021-06-30 07:24:22', '2021-06-30 07:24:22'),
+(2, '4', 'Maltacourt (Canada) Ltd.', '2', '5', 'Jonathann Morco', 'jonathann.morco@maltacourt.ca', '(604) 278-3410', NULL, '2021-07-09 06:24:59', '2021-07-09 06:24:59');
 
 -- --------------------------------------------------------
 
@@ -983,7 +1009,7 @@ ALTER TABLE `companies`
 -- AUTO_INCREMENT for table `company_branches`
 --
 ALTER TABLE `company_branches`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `company_certificates`
@@ -995,7 +1021,7 @@ ALTER TABLE `company_certificates`
 -- AUTO_INCREMENT for table `company_directors`
 --
 ALTER TABLE `company_directors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `company_documents`
@@ -1007,7 +1033,7 @@ ALTER TABLE `company_documents`
 -- AUTO_INCREMENT for table `company_representatives`
 --
 ALTER TABLE `company_representatives`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `company_services`
@@ -1037,7 +1063,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `membershiptypes`
@@ -1055,7 +1081,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `news_categories`
@@ -1097,7 +1123,7 @@ ALTER TABLE `trackntraces`
 -- AUTO_INCREMENT for table `trade_references`
 --
 ALTER TABLE `trade_references`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`

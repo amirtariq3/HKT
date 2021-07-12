@@ -135,6 +135,6 @@ class CompanyServicesController extends Controller
     {
         $c = Company::where('id', $id)->with('services')->first();
         $c->services()->sync($r->services);
-        return redirect()->back()->with('success', 'Company_Service Updated!');;
+        return redirect()->back()->with('success', 'Company_Service Updated!');
     }
 }

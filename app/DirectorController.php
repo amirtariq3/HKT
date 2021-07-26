@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Country;
-use App\Models\Continent;
-use DataTables;
-use Exception;
+use App\Models\Company;
+use App\Models\CompanyDirector;
+use Auth;
 
-class CountryController extends Controller
+class DirectorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +17,13 @@ class CountryController extends Controller
      */
     public function index()
     {
-        return view('admin.country.list');
+        $user=Auth::guard('member')->user();
+        $data=Company::all()->where('member_id', $user->id)->first();
+        $id=$data->id;
+        //echo $id;die;
+        $ceo=CompanyDirector::all()->where('company_id', $id);
+        //echo $ceo;die;
+        return view('frontend.dashboard.ceo.ceo', ['ceo'=>$ceo]);
     }
 
     /**
@@ -28,8 +33,7 @@ class CountryController extends Controller
      */
     public function create()
     {
-        $data=Continent::all();
-        return view('admin.country.add', ['data'=>$data]);
+        return view('frontend.dashboard.ceo.ceo_add');
     }
 
     /**
@@ -40,16 +44,20 @@ class CountryController extends Controller
      */
     public function store(Request $r)
     {
-        //$data=$r->continen();die;
-        //dd($data);
-        $data=new Country;
+        $user=Auth::guard('member')->user();
+        $row=Company::all()->where('member_id', $user->id)->first();
+        //echo $row->id;die;
+        $data=new CompanyDirector;
+        $data->company_id=$row->id;
         $data->name=$r->name;
-        $data->code=$r->code;
-        $data->continent_id=$r->continent;
-        $data->image=($r->image)? $this->upload($r->image): null;
-        $data->status=$r->statu??1;
+        $data->email=$r->email;
+        $data->phone=$r->phone;
+        $data->designation=$r->designation;
+        $data->image=($r->image)? $this->upload($r->image):null;
+        $data->detail=$r->detail??null;
         $data->save();
-        return redirect()->route('admin.country.index')->with('success', 'Country Created!');
+        return redirect()->route('frontend.dashboard.ceo.ceo');
+        
     }
 
     /**
@@ -71,10 +79,8 @@ class CountryController extends Controller
      */
     public function edit($id)
     {
-        $data=Country::find($id);
-        $con=Continent::all();
-        //echo $data;
-        return view('admin.country.update', ['data'=>$data, 'con'=>$con]);
+        $data=CompanyDirector::find($id);
+        return view('frontend.dashboard.ceo.ceo_update', ['data'=>$data]);
     }
 
     /**
@@ -86,27 +92,32 @@ class CountryController extends Controller
      */
     public function update(Request $r, $id)
     {
-        $data=Country::find($id);
+        
+        $data=CompanyDirector::find($id);
+        $data->company_id=$data->company_id;
         $data->name=$r->name??$data->name;
-        $data->code=$r->code??$data->code;
+        $data->email=$r->email??$data->email;
+        $data->phone=$r->phone??$data->phone;
+        $data->designation=$r->designation??$data->designation;
         $data->image=($r->image)? $this->upload($r->image):$data->image;
-        $data->status=$r->statu??1;
+        $data->detail=$r->detail??$data->detail;
         $data->save();
-         redirect()->route('admin.country.index')->with('success', 'Country Updated!');
+        return redirect()->route('frontend.dashboard.ceo.ceo');
+
     }
 
-    
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
-        //
+        $data=CompanyDirector::find($id);
+        $data->delete();
+        return redirect()->back();
     }
-
-    public function datatable()
-      {
-        $data =Country::with('continent')->get();
-        return Datatables::of($data)->make(true);
-    }
-
     public function upload($image, $path="public/images")
     {
         if($image){

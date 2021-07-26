@@ -59,7 +59,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<button class="btn btn-primary col-md-6 col-md-offset-3" type="submit">Save Changes</button>
+							<button class="btn btn-primary col-md-6 col-md-offset-3" type="submit">Add</button>
 						</div>
 					</div>
 				</form>
@@ -67,5 +67,10 @@
 		</div>
 	</div>
 </div>
+<style>
+	.btn.btn-primary{
+    margin-left: 260px;
+}
+	</style>
 @include('frontend.dashboard.footer')
 	

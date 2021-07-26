@@ -48,7 +48,7 @@
 								<textarea class="form-control summernote" name="detail"></textarea>
 							</div>
 							
-								<button class="btn btn-primary btn-block" type="submit" name="edit" value="edit">Save Refference</button>
+								
 								
 								<button class="btn btn-primary btn-block" type="submit" name="add" value="add">Add Refference</button>
 								

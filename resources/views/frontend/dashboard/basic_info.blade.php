@@ -11,20 +11,23 @@ $user=Auth::guard('member')->user();
 			<div class="card m-b-30">
 				<form method="post" enctype="multipart/form-data">
 					@csrf	
+					@foreach ($data as $d)
+						
+					
 					<div class="card-body">
 						
 						<div class="form-group row">
 							<label for="example-text-input" class="col-sm-2 col-form-label">Company Name</label>
 
 							<div class="col-sm-10">
-								<input class="form-control" id="#name" type="text" name="name" value="{{$data->name}}">
+								<input class="form-control" id="#name" type="text" name="name" value="{{$d->name}}">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="example-text-input" class="col-sm-2 col-form-label">Address</label>
 
 							<div class="col-sm-10">
-								<textarea class="form-control" name="address">{{$data->address}}</textarea>
+								<textarea class="form-control" name="address">{{$d->address}}</textarea>
 							</div>
 						</div>
 						<div class="form-group row">
@@ -35,7 +38,7 @@ $user=Auth::guard('member')->user();
 								<select class="form-control" name="country" id="country" onchange="getCity()">
 									<option value="0">Select Country</option>
                                     @foreach ($country as $co)
-                                    <option {{($data->country_id==$co->id)? 'selected': ''}} value="{{$co->id}}">{{$co->name}}</option>
+                                    <option {{($d->country_id==$co->id)? 'selected': ''}} value="{{$co->id}}">{{$co->name}}</option>
                                     @endforeach
 								</select>
 							</div>
@@ -48,7 +51,7 @@ $user=Auth::guard('member')->user();
 								<select class="form-control" name="city" id="city">
 									<option value="0">Select City</option>
                                     @foreach ($city as $c)
-                                    <option {{($data->city_id==$c->id)? 'selected': ''}} value="{{$c->id}}">{{$c->name}}</option>
+                                    <option {{($d->city_id==$c->id)? 'selected': ''}} value="{{$c->id}}">{{$c->name}}</option>
                                     @endforeach
 								</select>
 							</div>
@@ -57,35 +60,35 @@ $user=Auth::guard('member')->user();
 							<label for="example-text-input" class="col-sm-2 col-form-label">Zip Code</label>
 
 							<div class="col-sm-10">
-								<input class="form-control" type="text" name="zip_code" value="{{$data->zip_code}}">
+								<input class="form-control" type="text" name="zip_code" value="{{$d->zip_code}}">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="example-text-input" class="col-sm-2 col-form-label">Company Email</label>
 
 							<div class="col-sm-10">
-								<input class="form-control" type="email" name="email" value="{{$data->email}}">
+								<input class="form-control" type="email" name="email" value="{{$d->email}}">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="example-text-input" class="col-sm-2 col-form-label">Company Phone</label>
 
 							<div class="col-sm-10">
-								<input class="form-control" type="text" name="phone" value="{{$data->phone}}">
+								<input class="form-control" type="text" name="phone" value="{{$d->phone}}">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="example-text-input" class="col-sm-2 col-form-label">Company Mobile</label>
 
 							<div class="col-sm-10">
-								<input class="form-control" type="text" name="mobile" value="{{$data->mobile}}">
+								<input class="form-control" type="text" name="mobile" value="{{$d->mobile}}">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="example-text-input" class="col-sm-2 col-form-label">Company Website</label>
 
 							<div class="col-sm-10">
-								<input class="form-control" type="text" name="website" value="{{$data->website}}">
+								<input class="form-control" type="text" name="website" value="{{$d->website}}">
 							</div>
 						</div>
 
@@ -107,7 +110,7 @@ $user=Auth::guard('member')->user();
 							<label for="example-text-input" class="col-sm-2 col-form-label">Company Branches</label>
 
 							<div class="col-sm-10">
-								<input class="form-control" type="text" name="no_of_branches" value="{{$data->no_of_branches}}">
+								<input class="form-control" type="text" name="no_of_branches" value="{{$d->no_of_branches}}">
 							</div>
 						</div>
 						<div class="form-group row">
@@ -123,7 +126,7 @@ $user=Auth::guard('member')->user();
 							<label for="example-text-input" class="col-sm-2 col-form-label">Working Hours</label>
 
 							<div class="col-sm-10">
-								<input class="form-control" type="text" name="working_hours" value="{{$data->working_hours}}">
+								<input class="form-control" type="text" name="working_hours" value="{{$d->working_hours}}">
 							</div>
 						</div>
 
@@ -131,7 +134,7 @@ $user=Auth::guard('member')->user();
 							<label for="example-text-input" class="col-sm-2 col-form-label">Profile</label>
 
 							<div class="col-sm-10">
-								<textarea name="profile" class="form-control summernote">{{$data->profile}}</textarea>
+								<textarea name="profile" class="form-control summernote">{{$d->profile}}</textarea>
 							</div>
 						</div>
 
@@ -140,21 +143,21 @@ $user=Auth::guard('member')->user();
 
 							<div class="col-sm-10">
 								<input type="file" name="logo" accept="image/*" >
-								<img src="{{asset('public/images/'.$data->logo)}}" alt="user" style="height: 100px" width="100px" class="rounded-circle">
+								<img src="{{asset('public/images/'.$d->logo)}}" alt="user" style="height: 100px" width="100px" class="rounded-circle">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="example-text-input" class="col-sm-2 col-form-label ">More Info.</label>
 
 							<div class="col-sm-10">
-								<textarea id="profile" name="more_info" class="form-control summernote">{{$data->more_info}}</textarea>
+								<textarea id="profile" name="more_info" class="form-control summernote">{{$d->more_info}}</textarea>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="example-text-input" class="col-sm-2 col-form-label">Status</label>
 
 							<div class="col-sm-10">
-								<input class="form-control" type="text"  value="{{$data->status}}" readonly>
+								<input class="form-control" type="text"  value="{{$d->status}}" readonly>
 							</div>
 						</div>
 
@@ -164,8 +167,13 @@ $user=Auth::guard('member')->user();
 					</div>
 				</form>
 			</div>
+			@endforeach
 		</div>
 	</div>
 </div>
-
+<style>
+	.btn.btn-primary{
+    margin-left: 260px;
+}
+	</style>
 @include('frontend.dashboard.footer')

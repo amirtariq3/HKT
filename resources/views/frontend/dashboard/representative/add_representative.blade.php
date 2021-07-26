@@ -13,7 +13,7 @@
 						<form method="post" class="card-body">
 							@csrf
 							<div class="form-group">
-								<input type="text" class="form-control" name="name" placeholder="Name" required="" value="<?php echo @$data['name']; ?>">
+								<input type="text" class="form-control" name="name" placeholder="Name" required="" value="">
 							</div>
 							<div class="form-group">
 								<select name="representative_id" class="form-control">
@@ -35,7 +35,7 @@
 								<input type="text" class="form-control" name="whatsapp" placeholder="Whatsapp"  value="">
 							</div>
 							
-								<button class="btn btn-primary btn-block" type="submit" name="edit" value="edit">Save</button>
+								
 								
 								<button class="btn btn-primary btn-block" type="submit" name="add" value="add">Save</button>
 								

@@ -20,12 +20,18 @@ class BranchController extends Controller
     public function index()
     {
         $user=Auth::guard('member')->user();
-        $data=Company::all()->where('member_id', $user->id)->first();
-        $id=$data->id;
+        if ($data=Company::all()->where('member_id', $user->id)->first()) {
+            $id=$data->id;
         //echo $id;die;
         $bran=CompanyBranch::all()->where('company_id', $id);
         //echo $bran;die;
-        return view('frontend.dashboard.branch', ['bran'=>$bran]);
+        return view('frontend.dashboard.branch.branch', ['bran'=>$bran]);
+        } else {
+            return redirect()->route('frontend.dashboard.prfile')->with('alert', 'Add Company First');
+        }
+        
+        
+        
     }
 
     /**
@@ -37,7 +43,7 @@ class BranchController extends Controller
     {
         $country=Country::all();
         $city=City::all();
-        return view('frontend.dashboard.add_branch', ['country'=>$country, 'city'=>$city]);
+        return view('frontend.dashboard.branch.add_branch', ['country'=>$country, 'city'=>$city]);
     }
 
     /**
@@ -81,7 +87,10 @@ class BranchController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data=CompanyBranch::find($id);
+        $country=Country::all();
+        $city=City::all();
+        return view('frontend.dashboard.branch.update', ['country'=>$country, 'city'=>$city, 'data'=>$data]);
     }
 
     /**
@@ -91,9 +100,18 @@ class BranchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $r, $id)
     {
-        //
+        $data=CompanyBranch::find($id);
+        $data->company_id=$data->company_id;
+        $data->branch=$r->name??$data->branch;
+        $data->address=$r->address??$data->address;
+        $data->country_id=$r->country_id??$data->country_id;
+        $data->city_id=$r->city_id??$data->city_id;
+        $data->phone=$r->phone??$data->phone;
+        $data->email=$r->email??$data->email;
+        $data->save();
+        return redirect()->route('frontend.dashboard.branch');
     }
 
     /**

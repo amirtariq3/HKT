@@ -1,12 +1,13 @@
 @include('frontend.dashboard.header')
+
 <div class="container-fluid">
 
 	<div class="row">
 
 		<div class="col-sm-12">
-			<h5 class="page-title">Company Branches</h5>
+			<h5 class="page-title">Trade Refrences</h5>
 			<hr>
-			<a href="{{route('frontend.dashboard.branch_add')}}" class="btn btn-primary brn-sm">Add Branch</a>
+			<a href="{{route('frontend.dashboard.news_add')}}" class="btn btn-primary brn-sm">Add News</a>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
@@ -15,34 +16,33 @@
 							<thead>
 								<tr>
 									<!-- <th>ID</th> -->
-									<th>Name</th>
-									<th>Address</th>
-									<th>City</th>
-									<th>Phone</th>
-									<th>Edit</th>
+									<th>Category</th>
+									<th>Title</th>
+									<th>Author</th>
+									<th>Edit/Delete</th>
 								</tr>
 							</thead>
 							<tbody>
-								@foreach ($bran as $b)
+                              
+								@foreach ($data as $f)
                                     
                                 
 										<tr>
 											
 											<td>
-												{{$b->branch}}
+												{{$f->category->name}}
 											</td>
 											<td>
-												{{$b->address}}
+												{{$f->title}}
 											</td>
 											<td>
-												{{$b->city->name}}
+												{{$f->member->name}}
 											</td>
+											
 											<td>
-												{{$b->phone}}
-											</td>
-											<td>
-												<a class="btn btn-primary btn-sm" href="">Edit</a>
-												<a class="btn btn-danger btn-sm" href="{{route('frontend.dashboard.branch.delete', [$b->id])}}">Delete</a>
+												<a class="btn btn-primary btn-sm" href="{{route('frontend.dashboard.news_edit', [$f->id])}}">Edit</a>
+												<a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')" href="{{route('frontend.dashboard.news.delete', [$f->id])}}">Delete</i></a>
+
 											</td>
 
 										</tr>

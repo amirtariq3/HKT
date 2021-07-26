@@ -19,12 +19,18 @@ class ServiceController extends Controller
     {
         $user=Auth::guard('member')->user();
         $id=$user->id;
-        $c = Company::where('member_id', $id)->with('services')->first();
-        $s = [];
+        if ($c = Company::where('member_id', $id)->with('services')->first()) {
+            $s = [];
         foreach($c->services as $a){
             array_push($s, $a->id);
         }
         return view('frontend.dashboard.service', ['services' => Service::all(), 'c_services' => $s, 'c'=>$c]);
+        } else {
+            return redirect()->route('frontend.dashboard.prfile')->with('alert', 'Add Company First');
+        }
+        
+        
+        
         
     }
 

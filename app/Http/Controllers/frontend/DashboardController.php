@@ -83,7 +83,7 @@ class DashboardController extends Controller
     public function show()
     {
         $user=Auth::guard('member')->user();
-        $data=Company::all()->where('member_id', $user->id)->first();
+        $data=Company::all()->where('member_id', $user->id);
         $country=Country::all();
         $city=City::all();
         //echo $data;die;

@@ -44,8 +44,8 @@
 												{{$p->whatsapp}}
 											</td>
 											<td>
-												<a class="btn btn-primary btn-sm" href="">Edit</a>
-												<a class="btn btn-danger btn-sm" href="{{route('frontend.dashboard.representative.delete', [$p->id])}}">Delete</a>
+												<a class="btn btn-primary btn-sm" href="{{route('frontend.dashboard.representative_edit', [$p->id])}}">Edit</a>
+												<a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')" href="{{route('frontend.dashboard.representative.delete', [$p->id])}}">Delete</i></a>
 											</td>
                                             
 										</tr>

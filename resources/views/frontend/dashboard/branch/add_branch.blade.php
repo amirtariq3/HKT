@@ -13,10 +13,10 @@
 						<form method="post" class="card-body">
 							@csrf
 							<div class="form-group">
-								<input type="text" class="form-control" name="name" placeholder="Branch Name" required="" value="">
+								<input type="text" class="form-control" value="{{$data->name}}" name="name" placeholder="Branch Name" required="" value="">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="address" placeholder="Branch Address" required="" value="">
+								<input type="text" class="form-control" value="{{$data->address}}" name="address" placeholder="Branch Address" required="" value="">
 							</div>
 							<div class="form-group">
 								<!-- <input type="text" class="form-control" name="country" placeholder="Country" required="" value=""> -->
@@ -37,14 +37,14 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="phone" placeholder="Phone"  value="">
+								<input type="text" class="form-control" value="{{$data->phone}}" name="phone" placeholder="Phone"  value="">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="email" placeholder="Email"  value="">
+								<input type="text" class="form-control"  name="email" placeholder="Email"  value="">
 							</div>
 
 
-								<button class="btn btn-primary btn-block" type="submit" name="edit" value="edit">Save</button>
+								
 								
 								<button class="btn btn-primary btn-block" type="submit" name="add" value="add">Add Branch</button>
 								

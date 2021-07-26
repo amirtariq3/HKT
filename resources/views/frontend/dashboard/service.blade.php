@@ -14,7 +14,7 @@
 								<tr>
 									<!-- <th>ID</th> -->
 									<th>SERVICE</th>
-									<th>EDIT</th>
+									
 								</tr>
 							</thead>
 							<tbody>
@@ -26,9 +26,7 @@
 											<td>
 												{{ $i->name }}
 											</td>
-											<td>
-												<a class="btn btn-danger btn-sm" href="">DELETE</a>
-											</td>
+											
 
 										</tr>
 										@endforeach
@@ -48,7 +46,7 @@
 									<label>Service</label>
                                     @foreach ($services as $s)
                                         <div class="checkbox">
-                                            <label><input type="checkbox" name="services[]" value="{{$s->id}}">{{$s->name}}</label>
+                                            <label><input type="checkbox" name="services[]" value="{{$s->id}}" {{ in_array($s->id, $c_services)? 'checked':'' }}>{{$s->name}}</label>
                                         </div>
                                     @endforeach
 								</div>

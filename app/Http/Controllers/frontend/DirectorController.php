@@ -18,12 +18,19 @@ class DirectorController extends Controller
     public function index()
     {
         $user=Auth::guard('member')->user();
-        $data=Company::all()->where('member_id', $user->id)->first();
-        $id=$data->id;
-        //echo $id;die;
+        
+        if ($data=Company::all()->where('member_id', $user->id)->first()) {
+            $id=$data->id;
+            //echo $id;die;
         $ceo=CompanyDirector::all()->where('company_id', $id);
         //echo $ceo;die;
-        return view('frontend.dashboard.ceo', ['ceo'=>$ceo]);
+        return view('frontend.dashboard.ceo.ceo', ['ceo'=>$ceo]);
+        } else {
+            return redirect()->route('frontend.dashboard.prfile')->with('alert', 'Add Company First');
+        }
+        
+        
+        
     }
 
     /**
@@ -33,7 +40,7 @@ class DirectorController extends Controller
      */
     public function create()
     {
-        return view('frontend.dashboard.ceo_add');
+        return view('frontend.dashboard.ceo.ceo_add');
     }
 
     /**
@@ -56,7 +63,7 @@ class DirectorController extends Controller
         $data->image=($r->image)? $this->upload($r->image):null;
         $data->detail=$r->detail??null;
         $data->save();
-        return redirect()->route('frontend.dashboard.ceo');
+        return redirect()->route('frontend.dashboard.ceo.ceo');
         
     }
 
@@ -79,7 +86,8 @@ class DirectorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data=CompanyDirector::find($id);
+        return view('frontend.dashboard.ceo.ceo_update', ['data'=>$data]);
     }
 
     /**
@@ -89,9 +97,20 @@ class DirectorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $r, $id)
     {
-        //
+        
+        $data=CompanyDirector::find($id);
+        $data->company_id=$data->company_id;
+        $data->name=$r->name??$data->name;
+        $data->email=$r->email??$data->email;
+        $data->phone=$r->phone??$data->phone;
+        $data->designation=$r->designation??$data->designation;
+        $data->image=($r->image)? $this->upload($r->image):$data->image;
+        $data->detail=$r->detail??$data->detail;
+        $data->save();
+        return redirect()->route('frontend.dashboard.ceo.ceo');
+
     }
 
     /**

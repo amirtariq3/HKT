@@ -78,8 +78,8 @@
 							<li><a href="{{route('frontend.dashboard.refrence')}}">Trade References</a></li>
 							<li><a href="{{route('frontend.dashboard.certificate')}}">Certifications</a></li>
 							<li><a href="{{route('frontend.dashboard.branch')}}">Company Branches</a></li>
-							<li><a href="{{route('frontend.news')}}" target="_blank">News</a></li>
-							<li><a href="{{route('frontend.dashboard.news_add')}}">Add News</a></li>
+							<li><a href="{{route('frontend.dashboard.news')}}">News</a></li>
+							
 					<!--<li class="has_sub nav-active">-->
 					<!--	<a href="javascript:void(0);" class="waves-effect">-->
 					<!--	<i class="fa fa-id-card"></i> -->

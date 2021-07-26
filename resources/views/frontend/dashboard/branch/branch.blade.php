@@ -1,13 +1,12 @@
 @include('frontend.dashboard.header')
-
 <div class="container-fluid">
 
 	<div class="row">
 
 		<div class="col-sm-12">
-			<h5 class="page-title">Trade Refrences</h5>
+			<h5 class="page-title">Company Branches</h5>
 			<hr>
-			<a href="{{route('frontend.dashboard.refrence_add')}}" class="btn btn-primary brn-sm">Add Reference</a>
+			<a href="{{route('frontend.dashboard.branch_add')}}" class="btn btn-primary brn-sm">Add Branch</a>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
@@ -16,38 +15,35 @@
 							<thead>
 								<tr>
 									<!-- <th>ID</th> -->
-									<th>Company</th>
+									<th>Name</th>
+									<th>Address</th>
 									<th>City</th>
-									<th>Contact Person</th>
-									<th>Email</th>
 									<th>Phone</th>
-									<th>Edit/Delete</th>
+									<th>Edit</th>
 								</tr>
 							</thead>
 							<tbody>
-								@foreach ($ref as $f)
+								@foreach ($bran as $b)
                                     
                                 
 										<tr>
 											
 											<td>
-												{{$f->company->name}}
+												{{$b->branch}}
 											</td>
 											<td>
-												{{$f->city->name}}
+												{{$b->address}}
 											</td>
 											<td>
-												{{$f->contact_person}}
+												{{$b->city->name}}
 											</td>
 											<td>
-												{{$f->email}}
+												{{$b->phone}}
 											</td>
 											<td>
-												{{$f->phone}}
-											</td>
-											<td>
-												<a class="btn btn-primary btn-sm" href="">Edit</a>
-												<a class="btn btn-danger btn-sm" href="{{route('frontend.dashboard.refrence.delete', [$f->id])}}">Delete</a>
+												<a class="btn btn-primary btn-sm" href="{{route('frontend.dashboard.branch_edit', [$b->id])}}">Edit</a>
+												<a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')" href="{{route('frontend.dashboard.branch.delete', [$b->id])}}">Delete</i></a>
+
 											</td>
 
 										</tr>

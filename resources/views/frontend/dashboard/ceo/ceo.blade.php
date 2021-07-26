@@ -40,8 +40,8 @@
 												<img src="{{asset('public/images/'.$c->image)}}" width="100">
 											</td>
 											<td>
-												<a href="" class="btn btn-primary btn-sm">Edit</a>
-												<a href="{{route('frontend.dashboard.ceo.delete', [$c->id])}}" class="btn btn-danger btn-sm">Delete</a>
+												<a href="{{route('frontend.dashboard.ceo_edit', [$c->id])}}" class="btn btn-primary btn-sm">Edit</a>
+												<a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')" href="{{route('frontend.dashboard.ceo.delete', [$c->id])}}">Delete</i></a>
 											</td>
                                             
 										</tr>

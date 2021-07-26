@@ -77,7 +77,9 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news=News::find($id);
+        $data=NewsCategory::all();
+        return view('frontend.dashboard.news.update', ['data'=>$data, 'news'=>$news]);
     }
 
     /**
@@ -87,9 +89,20 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $r, $id)
     {
-        //
+        $user=Auth::guard('member')->user();
+        $data=News::find($id);
+        $data->news_category_id=$r->category_id??$data->news_category_id;
+        $data->title=$r->title??$data->title;
+        $data->image=($r->image)?$this->upload($r->image):$data->image;
+        $data->short_detail=$r->short_detail??$data->short_detail;
+        $data->description=$r->description??$data->description;
+        $data->member_id=$user->id;
+        $data->shares=$r->shares??$data->shares;
+        $data->status=$r->status??$data->status;
+        $data->save();
+        return redirect()->route('frontend.dashboard.news');
     }
 
     /**
@@ -100,12 +113,21 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data=News::find($id);
+        $data->delete();
+        return redirect()->back();
     }
     public function add()
     {
         $data=NewsCategory::all();
-        return view('frontend.dashboard.add_news', ['data'=>$data]);
+        return view('frontend.dashboard.news.add_news', ['data'=>$data]);
+    }
+
+    public function list()
+    {
+        $user=Auth::guard('member')->user();
+        $data=News::all()->where('member_id', $user->id);
+        return view('frontend.dashboard.news.news', ['data'=>$data]);
     }
 
     public function upload($image, $path="public/images")

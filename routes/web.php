@@ -162,6 +162,10 @@ Route::group(['prefix'=>'/', 'as'=> 'frontend.'], function(){
     Route::get('airports', ['as'=>'airports', 'uses'=>'frontend\TracknTraceController@create']);
     Route::get('airline', ['as'=>'airline', 'uses'=>'frontend\TracknTraceController@show']);
     Route::get('widgets', ['as'=>'widgets', 'uses'=>'frontend\TracknTraceController@tool']);
+
+    Route::get('forget_password', ['as'=>'forget_password', 'uses'=>'frontend\ForgetPasswordController@index']);
+
+
 Route::middleware('login:member')->group(function(){
     Route::get('dashboard',['as'=>'dashboard', 'uses'=>'frontend\DashboardController@index']);
     Route::get('dashboard/memer_profile',['as'=>'dashboard.prfile', 'uses'=>'frontend\DashboardController@create']);
@@ -173,6 +177,8 @@ Route::middleware('login:member')->group(function(){
     Route::get('dashboard/ceo_add',['as'=>'dashboard.ceo_add', 'uses'=>'frontend\DirectorController@create']);
     Route::post('dashboard/ceo_add',['as'=>'dashboard.ceo_add', 'uses'=>'frontend\DirectorController@store']);
     Route::get('dashboard/ceo_add/{id}',['as'=>'dashboard.ceo.delete', 'uses'=>'frontend\DirectorController@destroy']);
+    Route::get('dashboard/ceo_edit/{id}',['as'=>'dashboard.ceo_edit', 'uses'=>'frontend\DirectorController@edit']);
+    Route::post('dashboard/ceo_edit/{id}',['as'=>'dashboard.ceo_edit', 'uses'=>'frontend\DirectorController@update']);
 
     Route::get('dashboard/service',['as'=>'dashboard.service', 'uses'=>'frontend\ServiceController@index']);
     Route::post('dashboard/service',['as'=>'dashboard.service', 'uses'=>'frontend\ServiceController@store']);
@@ -184,18 +190,33 @@ Route::middleware('login:member')->group(function(){
     Route::get('dashboard/representative_add',['as'=>'dashboard.representative_add', 'uses'=>'frontend\RepresentativeController@create']);
     Route::post('dashboard/representative_add',['as'=>'dashboard.representative_add', 'uses'=>'frontend\RepresentativeController@store']);
     Route::get('dashboard/representative/{id}',['as'=>'dashboard.representative.delete', 'uses'=>'frontend\RepresentativeController@destroy']);
+    Route::get('dashboard/representative_edit/{id}',['as'=>'dashboard.representative_edit', 'uses'=>'frontend\RepresentativeController@edit']);
+    Route::post('dashboard/representative_edit/{id}',['as'=>'dashboard.representative_edit', 'uses'=>'frontend\RepresentativeController@update']);
 
     Route::get('dashboard/refrence',['as'=>'dashboard.refrence', 'uses'=>'frontend\RefrenceController@index']);
     Route::get('dashboard/refrence_add',['as'=>'dashboard.refrence_add', 'uses'=>'frontend\RefrenceController@create']);
     Route::post('dashboard/refrence_add',['as'=>'dashboard.refrence_add', 'uses'=>'frontend\RefrenceController@store']);
     Route::post('dashboard/refrence/{id}',['as'=>'dashboard.refrence.delete', 'uses'=>'frontend\RefrenceController@destroy']);
+    Route::get('dashboard/refrence_edit/{id}',['as'=>'dashboard.refrence_edit', 'uses'=>'frontend\RefrenceController@edit']);
+    Route::post('dashboard/refrence_edit/{id}',['as'=>'dashboard.refrence_edit', 'uses'=>'frontend\RefrenceController@update']);
 
     Route::get('dashboard/branch',['as'=>'dashboard.branch', 'uses'=>'frontend\BranchController@index']);
     Route::get('dashboard/branch_add',['as'=>'dashboard.branch_add', 'uses'=>'frontend\BranchController@create']);
     Route::post('dashboard/branch_add',['as'=>'dashboard.branch_add', 'uses'=>'frontend\BranchController@store']);
     Route::get('dashboard/branch/{id}',['as'=>'dashboard.branch.delete', 'uses'=>'frontend\BranchController@destroy']);
+    Route::get('dashboard/branch_edit/{id}',['as'=>'dashboar.branch_edit', 'uses'=>'frontend\BranchController@edit']);
+    Route::post('dashboard/branch_edit/{id}',['as'=>'dashboard.branch_edit', 'uses'=>'frontend\BranchController@update']);
+
+    Route::get('dashboard/news',['as'=>'dashboard.news', 'uses'=>'frontend\NewsController@list']);
     Route::get('dashboard/news_add',['as'=>'dashboard.news_add', 'uses'=>'frontend\NewsController@add']);
     Route::post('dashboard/news_add',['as'=>'dashboard.news_add', 'uses'=>'frontend\NewsController@store']);
+    Route::get('dashboard/news_edit/{id}',['as'=>'dashboard.news_edit', 'uses'=>'frontend\NewsController@edit']);
+    Route::post('dashboard/news_edit/{id}',['as'=>'dashboard.news_edit', 'uses'=>'frontend\NewsController@update']);
+    Route::get('dashboard/news/delete/{id}',['as'=>'dashboard.news.delete', 'uses'=>'frontend\NewsController@destroy']);
+
+    Route::get('/company_detail/{id}', ['as'=>'company.detail', 'uses'=>'frontend\CompanyController@index']);
+    Route::get('/reviewandrating/{id}', ['as'=>'company.rating', 'uses'=>'frontend\ReviewController@create']);
+    Route::post('/reviewandrating/{id}', ['as'=>'company.rating', 'uses'=>'frontend\ReviewController@store']);
 });
 });
 

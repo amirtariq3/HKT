@@ -10,6 +10,11 @@ $user=Auth::guard('member')->user();
 			<div class="card m-b-30">
 				<form method="post" enctype="multipart/form-data">	
 					@csrf
+					@if(Session::get('alert'))
+                    <div class="alert alert-danger">
+                    {{Session::get('alert')}}
+                    </div>
+                    @endif
 					<div class="card-body">
 						
 						<div class="form-group row">
@@ -171,5 +176,10 @@ $user=Auth::guard('member')->user();
 	<!-- end col -->
 	</div>
 </div>
+<style>
+	.btn.btn-primary{
+    margin-right: 230px;
+}
+	</style>
 
 @include('frontend.dashboard.footer')

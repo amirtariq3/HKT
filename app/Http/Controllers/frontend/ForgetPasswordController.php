@@ -4,11 +4,8 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Certificate;
-use App\Models\Company;
-use Auth;
 
-class CertificateController extends Controller
+class ForgetPasswordController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,21 +14,7 @@ class CertificateController extends Controller
      */
     public function index()
     {
-        $user=Auth::guard('member')->user();
-        $id=$user->id;
-        if ($c = Company::where('member_id', $id)->with('services')->first()) {
-            $s = [];
-        foreach($c->certificate as $a){
-            array_push($s, $a->id);
-        }
-        return view('frontend.dashboard.certificate', ['certificate' => Certificate::all(), 'c_certificate' => $s, 'c'=>$c]);
-        } else {
-            return redirect()->route('frontend.dashboard.prfile')->with('alert', 'Add Company First');
-        }
-        
-        
-        
-   
+        return view('frontend.forget');
     }
 
     /**
@@ -50,14 +33,9 @@ class CertificateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $r)
+    public function store(Request $request)
     {
-        $user=Auth::guard('member')->user();
-        $id=$user->id;
-        $c = Company::where('member_id', $id)->with('services')->first();
-        //echo $c;die;
-        $c->certificate()->sync($r->certificate);
-        return redirect()->back()->with('success', 'Company_Service Updated!');
+        //
     }
 
     /**

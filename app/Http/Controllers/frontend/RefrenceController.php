@@ -20,12 +20,18 @@ class RefrenceController extends Controller
     public function index()
     {
         $user=Auth::guard('member')->user();
-        $data=Company::all()->where('member_id', $user->id)->first();
-        $id=$data->id;
+        if ($data=Company::all()->where('member_id', $user->id)->first()) {
+            $id=$data->id;
         //echo $id;die;
         $ref=TradeReferences::all()->where('company_id', $id);
         //echo $ceo;die;
-        return view('frontend.dashboard.refrence', ['ref'=>$ref]);
+        return view('frontend.dashboard.refrence.refrence', ['ref'=>$ref]);
+        } else {
+            return redirect()->route('frontend.dashboard.prfile')->with('alert', 'Add Company First');
+        }
+        
+        
+        
     }
 
     /**
@@ -37,7 +43,7 @@ class RefrenceController extends Controller
     {
         $country=Country::all();
         $city=City::all();
-        return view('frontend.dashboard.add_refrence', ['country'=>$country, 'city'=>$city]);
+        return view('frontend.dashboard.refrence.add_refrence', ['country'=>$country, 'city'=>$city]);
     }
 
     /**
@@ -82,7 +88,11 @@ class RefrenceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data=TradeReferences::find($id);
+        $country=Country::all();
+        $city=City::all();
+        return view('frontend.dashboard.refrence.update', ['country'=>$country, 'city'=>$city, 'data'=>$data]);
+
     }
 
     /**
@@ -94,7 +104,17 @@ class RefrenceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data=TradeReferences::find($id);
+        $data->company_id=$data->company_id;
+        $data->name=$r->name??$data->name;
+        $data->country_id=$r->country_id??$data->country_id;
+        $data->city_id=$r->city_id??$data->city_id;
+        $data->contact_person=$r->contact_person??$data->contact_person;;
+        $data->email=$r->email??$data->email;
+        $data->phone=$r->phone??$data->phone;
+        $data->detail=$r->detail??$data->detail;
+        $data->save();
+        return redirect()->route('frontend.dashboard.refrence');
     }
 
     /**

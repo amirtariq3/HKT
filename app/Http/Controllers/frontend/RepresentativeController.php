@@ -19,12 +19,18 @@ class RepresentativeController extends Controller
     public function index()
     {
         $user=Auth::guard('member')->user();
-        $data=Company::all()->where('member_id', $user->id)->first();
-        $id=$data->id;
+        if ($data=Company::all()->where('member_id', $user->id)->first()) {
+            $id=$data->id;
         //echo $id;die;
         $rep=CompanyRepresentative::all()->where('company_id', $id);
         //echo $ceo;die;
-        return view('frontend.dashboard.representative', ['rep'=>$rep]);
+        return view('frontend.dashboard.representative.representative', ['rep'=>$rep]);
+        } else {
+            return redirect()->route('frontend.dashboard.prfile')->with('alert', 'Add Company First');
+        }
+        
+        
+        
     }
 
     /**
@@ -35,7 +41,7 @@ class RepresentativeController extends Controller
     public function create()
     {
         $data=representative::all();
-        return view('frontend.dashboard.add_representative', ['data'=>$data]);
+        return view('frontend.dashboard.representative.add_representative', ['data'=>$data]);
     }
 
     /**
@@ -78,7 +84,10 @@ class RepresentativeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data=CompanyRepresentative::find($id);
+        $rep=representative::all();
+        return view('frontend.dashboard.representative.update', ['data'=>$data, 'rep'=>$rep]);
+
     }
 
     /**
@@ -88,9 +97,18 @@ class RepresentativeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $r, $id)
     {
-        //
+        $data=CompanyRepresentative::find($id);
+        $data->company_id=$data->company_id;
+        $data->name=$r->name??$data->name;
+        $data->email=$r->email??$data->email;
+        $data->phone=$r->phone??$data->phone;
+        $data->whatsupp=$r->whatsupp??$data->whatsupp;
+        $data->representative_id=$r->representative_id??$data->representative_id;
+        $data->save();
+        return redirect()->route('frontend.dashboard.representative');
+
     }
 
     /**

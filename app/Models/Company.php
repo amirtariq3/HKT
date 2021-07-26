@@ -76,4 +76,9 @@ class Company extends Model
         return $this->hasMany('App\Models\CompanyDocument');
     }
 
+    public function rating()
+    {
+        return $this->hasMany('App\Models\Rating');
+    }
+
 }

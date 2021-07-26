@@ -4,7 +4,7 @@
 	<div class="row">
 
 		<div class="col-sm-12">
-			<h5 class="page-title">Company Services</h5>
+			<h5 class="page-title">Company Certificate</h5>
 			<hr>
 			<div class="row">
 				<div class="col-md-7">
@@ -13,8 +13,8 @@
 							<thead>
 								<tr>
 									<!-- <th>ID</th> -->
-									<th>SERVICE</th>
-									<th>EDIT</th>
+									<th>Certificate</th>
+									
 								</tr>
 							</thead>
 							<tbody>
@@ -26,9 +26,7 @@
 											<td>
 												{{$i->name}}
 											</td>
-											<td>
-												<a class="btn btn-danger btn-sm" href="">DELETE</a>
-											</td>
+											
 
 										</tr>
 										@endforeach
@@ -49,7 +47,7 @@
 									<label>Certificate</label>
                                     @foreach ($certificate as $s)
                                         <div class="checkbox">
-                                            <label><input type="checkbox" name="certificate[]" value="{{$s->id}}">{{$s->name}}</label>
+                                            <label><input type="checkbox" name="certificate[]" value="{{$s->id}}" {{ in_array($s->id, $c_certificate)? 'checked':'' }}>{{$s->name}}</label>
                                         </div>
                                     @endforeach
 								</div>

@@ -28,7 +28,7 @@ $user=Auth::guard('member')->user();
 
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown">
                             
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item" href="{{route('frontend.dashboard.info')}}">
                                 <i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile
                             </a> 
                             

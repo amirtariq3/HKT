@@ -4,11 +4,10 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Certificate;
-use App\Models\Company;
+use App\Models\Rating;
 use Auth;
 
-class CertificateController extends Controller
+class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,21 +16,6 @@ class CertificateController extends Controller
      */
     public function index()
     {
-        $user=Auth::guard('member')->user();
-        $id=$user->id;
-        if ($c = Company::where('member_id', $id)->with('services')->first()) {
-            $s = [];
-        foreach($c->certificate as $a){
-            array_push($s, $a->id);
-        }
-        return view('frontend.dashboard.certificate', ['certificate' => Certificate::all(), 'c_certificate' => $s, 'c'=>$c]);
-        } else {
-            return redirect()->route('frontend.dashboard.prfile')->with('alert', 'Add Company First');
-        }
-        
-        
-        
-   
     }
 
     /**
@@ -39,9 +23,11 @@ class CertificateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $data=Rating::all()->where('company_id', $id);
+        return view('frontend.rating', ['data'=>$data]);
+        
     }
 
     /**
@@ -50,14 +36,17 @@ class CertificateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $r)
+    public function store(Request $r, $id)
     {
         $user=Auth::guard('member')->user();
-        $id=$user->id;
-        $c = Company::where('member_id', $id)->with('services')->first();
-        //echo $c;die;
-        $c->certificate()->sync($r->certificate);
-        return redirect()->back()->with('success', 'Company_Service Updated!');
+        //dd($r->all());
+        $data=new Rating;
+        $data->company_id=$id;
+        $data->name=$user->name;
+        $data->rating=$r->rating;
+        $data->review=$r->review;
+        $data->save();
+        return redirect()->back();
     }
 
     /**

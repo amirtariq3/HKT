@@ -21,16 +21,22 @@ $company=company();
                     </thead>	
                     <tbody id="listing">
                       @foreach ($company as $com)
+                      
                       <tr>
-                        <td>{{$com->country->continent->name}}</td>
-                        <td><img src="{{asset('public/images/'.$com->country->image)}}" width="25">&nbsp;{{$com->country->name}}</td>
-                        <td>{{$com->city->name}}</td>
-                        <td>{{$com->name}}</td>
-                        <td><i class="fa fa-envelope fa-fw"></i> 
-                          <i class="fa fa-phone fa-fw"></i> 
-                          <i class="fa fa-globe fa-fw"></i></td>
-                        <td><i class="fa fa-comment-alt fa-fw"></i></td>
-                    </tr>
+                          <td><a href="{{route('frontend.company.detail',[$com->id])}}">{{$com->country->continent->name}}</a></td>
+                          <td><a href="{{route('frontend.company.detail',[$com->id])}}"><img src="{{asset('public/images/'.$com->country->image)}}" width="25">&nbsp;{{$com->country->name}}</a></td>
+                          <td><a href="{{route('frontend.company.detail',[$com->id])}}">{{$com->city->name}}</a></td>
+                          @if(Auth::guard('member')->user())   
+                          <td><a href="{{route('frontend.company.detail',[$com->id])}}">{{$com->name}}</a></td>
+                          @else
+                          <td class="blurredData no-copy" style="color:transparent;text-shadow: 4px 4px 16px #000;">{{$com->name}}</td>
+                          @endif
+                          <td><a href="{{route('frontend.company.detail',[$com->id])}}"><i class="fa fa-envelope fa-fw"></i> 
+                            <i class="fa fa-phone fa-fw"></i> 
+                            <i class="fa fa-globe fa-fw"></i></td>
+                          <td><i class="fa fa-comment-alt fa-fw"></i></a></td>
+                      </tr>
+                      
                       @endforeach
                       
                     </tbody>

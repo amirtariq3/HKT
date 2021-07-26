@@ -4,34 +4,29 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Certificate;
 use App\Models\Company;
-use Auth;
+use App\Models\CompanyDirector;
+use App\Models\Member;
+use App\Models\CompanyRepresentative;
+use App\Models\CompanyBranch;
 
-class CertificateController extends Controller
+class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $user=Auth::guard('member')->user();
-        $id=$user->id;
-        if ($c = Company::where('member_id', $id)->with('services')->first()) {
-            $s = [];
-        foreach($c->certificate as $a){
-            array_push($s, $a->id);
-        }
-        return view('frontend.dashboard.certificate', ['certificate' => Certificate::all(), 'c_certificate' => $s, 'c'=>$c]);
-        } else {
-            return redirect()->route('frontend.dashboard.prfile')->with('alert', 'Add Company First');
-        }
+        $company=Company::find($id);
+        $mid=$company->member_id;
+        $member=Member::find($mid);
+        $director=CompanyDirector::all()->where('company_id', $id);
+        $represent=CompanyRepresentative::all()->where('company_id', $id);
+        $branch=CompanyBranch::all()->where('company_id', $id);
         
-        
-        
-   
+        return view('frontend.company_detail', ['company'=>$company, 'member'=>$member, 'director'=>$director, 'represent'=>$represent, 'branch'=>$branch]);
     }
 
     /**
@@ -50,14 +45,9 @@ class CertificateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $r)
+    public function store(Request $request)
     {
-        $user=Auth::guard('member')->user();
-        $id=$user->id;
-        $c = Company::where('member_id', $id)->with('services')->first();
-        //echo $c;die;
-        $c->certificate()->sync($r->certificate);
-        return redirect()->back()->with('success', 'Company_Service Updated!');
+        //
     }
 
     /**

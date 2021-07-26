@@ -72,4 +72,4 @@
 
 
 
-@include('frontend.dashboard.footer')
+@include('frontend.footer')

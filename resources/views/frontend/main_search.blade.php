@@ -13,10 +13,10 @@ $service=service();
             
             <div class="col-md-4">
              <!-- <input type="text" class="form-control" placeholder="Country" name="country"> -->
-             <select class="form-control " name="country" id="country" onchange="getCity()">
+             <select class="form-control " name="country" id="country">
                  <option disabled="" selected="">Country</option>
                  @foreach ($country as $c)
-                 <option>{{$c->name}}</option>
+                 <option value="{{$c->id}}">{{$c->name}}</option>
                  @endforeach
              </select>
             </div>
@@ -25,9 +25,7 @@ $service=service();
              <!-- <input type="text" class="form-control" placeholder="City/Area" name="city"> -->
              <select class="form-control "   name="city" id="city">
                  <option disabled="" selected="">City</option>
-                 @foreach ($city as $ci)
-                 <option>{{$ci->name}}</option>
-                 @endforeach
+                 
              </select>
             </div>
             <div class="col-md-4">
@@ -58,4 +56,30 @@ $service=service();
         </div>
     </div>
  </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $('select[name="country"]').on('change', function() {
+            var id = $(this).val();
+            if(id) {
+                $.ajax({
+                    url: '/country/'+id,
+                    type: "GET",
+                    dataType: "json",
+                    success:function(data) {
+
+                        
+                        $('select[name="city"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="city"]').append('<option value="'+ key +'">'+ value +'</option>');
+                        });
+
+
+                    }
+                });
+            }else{
+                $('select[name="city"]').empty();
+            }
+        });
+    });
+</script>
  

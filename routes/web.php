@@ -164,6 +164,8 @@ Route::group(['prefix'=>'/', 'as'=> 'frontend.'], function(){
     Route::get('widgets', ['as'=>'widgets', 'uses'=>'frontend\TracknTraceController@tool']);
 
     Route::get('forget_password', ['as'=>'forget_password', 'uses'=>'frontend\ForgetPasswordController@index']);
+    Route::get('/country/{id}', ['as'=> 'country_city', 'uses'=>'admin\CountryController@ajax']);
+
 
 
 Route::middleware('login:member')->group(function(){
@@ -220,21 +222,6 @@ Route::middleware('login:member')->group(function(){
 });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::group(['prefix' => 'user', 'as' => 'user.'], function(){
     
     Route::get('/login', ['as'=> 'login', 'uses' => 'user\UserController@index']);
@@ -243,4 +230,6 @@ Route::group(['prefix' => 'user', 'as' => 'user.'], function(){
     Route::get('/dashboard', ['as' =>'dash', 'uses' => 'user\UserController@dash']);
 });
 
+Route::get('/country', ['as'=>'get_country', 'uses'=>'AjaxController@index']);
+Route::get('/country/city/{id}', ['as'=>'savedata', 'uses'=>'AjaxController@show']);
 

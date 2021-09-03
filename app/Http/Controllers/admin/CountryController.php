@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Country;
 use App\Models\Continent;
+use App\Models\City;
 use DataTables;
 use Exception;
 
@@ -98,7 +99,7 @@ class CountryController extends Controller
     
     public function destroy($id)
     {
-        //
+       
     }
 
     public function datatable()
@@ -118,4 +119,10 @@ class CountryController extends Controller
             return null;
         }
     }
+
+    
+
+    
+
+    
 }
